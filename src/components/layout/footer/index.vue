@@ -1,6 +1,6 @@
 <template>
     <div class="footer">
-        <div>© 2021 | Hansen</div>
+        <div>© 2023 | Hansen</div>
     </div>
 </template>
 
