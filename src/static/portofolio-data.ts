@@ -6,9 +6,11 @@ export default ref([
         src: "/portofolio/hansenwu.jpg",
         description: `
             <p>
-            Tech Stack: <br>
-            - Vue 3 <br>
-            - TypeScript <br>
+                Tech Stack: <br>
+                <ul style='margin: 0; padding: 0 0 0 18px'>
+                    <li style='margin-bottom: 10px'>Vue 3</li>
+                    <li>TypeScript</li>
+                </ul>
             </p>
         `
     },
@@ -17,12 +19,14 @@ export default ref([
         src: "/portofolio/event-tracker.jpg",
         description: `
             <p>
-            Tech Stack: <br>
-            - Flutter <br>
-            - Sqlite <br>
-            <br>
-            You can access the video   
-            <a href="https://www.youtube.com/watch?v=m1o9LBP-9NI" target="_blank" style="color: white">here</a>
+                Tech Stack: <br>
+                <ul style='margin: 0; padding: 0 0 0 18px'>
+                    <li style='margin-bottom: 10px'>Flutter</li>
+                    <li>Sqlite</li>
+                </ul>
+                <br>
+                You can access the video   
+                <a href="https://www.youtube.com/watch?v=m1o9LBP-9NI" target="_blank" style="color: white">here</a>
             </p>
         `
     },
@@ -32,18 +36,23 @@ export default ref([
         showInHomePage: true,
         description: `
             <p>
-            Feature: <br>
-            - Admin Panel <br>
-            - Cashier Panel <br>
-            - Event information & register ancestor <br>
-            <br>
-            Tech Stack: <br>
-            - Laravel <br>
-            - MySql <br>
-            - VueJs <br>
-            <br>
-            You can access the Pattidana Event sites  
-            <a href="https://pattidana.dhammamanggala.org" target="_blank" style="color: white">here</a>
+                Feature: <br>
+                <ul style='margin: 0; padding: 0 0 0 18px'>
+                    <li style='margin-bottom: 10px'>Admin Dashboard</li>
+                    <li style='margin-bottom: 10px'>Cashier Dashboard</li>
+                    <li>Event information & register ancestor</li>
+                </ul>
+                <br>
+                Tech Stack: <br>
+                <br>
+                <ul style='margin: 0; padding: 0 0 0 18px'>
+                    <li style='margin-bottom: 10px'>Laravel</li>
+                    <li style='margin-bottom: 10px'>MySQL</li>
+                    <li>VueJs</li>
+                </ul>
+                <br>
+                You can access the Pattidana Event sites  
+                <a href="https://pattidana.dhammamanggala.org" target="_blank" style="color: white">here</a>
             </p>
         `
     },
@@ -53,14 +62,20 @@ export default ref([
         showInHomePage: true,
         description: `
             <p>
-            Feature: <br>
-            - Admin Panel/ Content Management System <br>
-            - SDATR profile & information <br>
-            - Submission for “Peil Banjir” and “Rekom Tanah pengairan” <br>
-            <br>
-            Tech Stack: <br>
-            - Laravel <br>
-            - MySql <br>
+                Feature: <br>
+                <ul style='margin: 0; padding: 0 0 0 18px'>
+                    <li style='margin-bottom: 10px'>Admin Dashboard/ Content Management System</li>
+                    <li style='margin-bottom: 10px'>SDATR profile & information</li>
+                    <li>Submission for “Peil Banjir” and “Rekom Tanah pengairan”</li>
+                </ul>
+                <br>
+                Tech Stack: <br>
+                <br>
+                <ul style='margin: 0; padding: 0 0 0 18px'>
+                    <li style='margin-bottom: 10px'>Laravel</li>
+                    <li>MySQL</li>
+                </ul>
+                <br>
             </p>
         `
     },
@@ -69,9 +84,13 @@ export default ref([
         src: "/portofolio/landing-page.jpg",
         description: `
             <p>
-            Tech Stack: <br>
-            VueJs <br>
-            <br>
+                Tech Stack: <br>
+                <ul style='margin: 0; padding: 0 0 0 18px'>
+                    <li>VueJs</li>
+                </ul>
+                <br>
+            </p>
+            <p>
             You can access the sites 
             <a href="https://landingpage.hansengotama.com" target="_blank" style="color: white">here</a>
             </p>
@@ -83,15 +102,18 @@ export default ref([
         showInHomePage: true,
         description: `
             <p>
-            Feature: <br>
-            - Hotel profile and information <br>
-            <br>
-            Tech Stack: <br>
-            - Laravel <br>
-            - VueJs <br>
-            <br>
-            You can access the Hotel Profile sites
-            <a href="https://hotelbintangmulia.net" target="_blank" style="color: white">here</a>
+                Feature: <br>
+                <ul style='margin: 0; padding: 0 0 0 18px'>
+                    <li>Hotel profile and information</li>
+                </ul>
+                <br>
+                Tech Stack: <br>
+                <br>
+                <ul style='margin: 0; padding: 0 0 0 18px'>
+                    <li style='margin-bottom: 10px'>Laravel</li>
+                    <li>VueJs</li>
+                </ul>
+                <br>
             </p>
         `
     },
@@ -101,19 +123,25 @@ export default ref([
         showInHomePage: true,
         description: `
             <p>
-            Feature: <br>
-            - Student Attendance <br>
-            - Student Tuition Fee <br>
-            - Teacher & Student Schedule <br>
-            - Student Online Quiz and Exam <br>
-            - Student Assignment <br>
-            - Forum Chat between Student and Teacher <br>
-            - Student Subject <br>
-            <br>
-            Tech Stack: <br>
-            - Laravel <br>
-            - VueJs <br>
-            - MySql <br>
+                Feature: <br>
+                <ul style='margin: 0; padding: 0 0 0 18px'>
+                    <li style='margin-bottom: 10px'>Student Attendance</li>
+                    <li style='margin-bottom: 10px'>Student Tuition Fee Reminder</li>
+                    <li style='margin-bottom: 10px'>Teacher & Student Schedule</li>
+                    <li style='margin-bottom: 10px'>Student Online Quiz and Exam</li>
+                    <li style='margin-bottom: 10px'>Student Assignment</li>
+                    <li style='margin-bottom: 10px'>Forum Chat between Student and Teacher</li>
+                    <li>Forum Chat between Student and Teacher</li>
+                </ul>
+                <br>
+                Tech Stack: <br>
+                <br>
+                <ul style='margin: 0; padding: 0 0 0 18px'>
+                    <li style='margin-bottom: 10px'>Laravel</li>
+                    <li style='margin-bottom: 10px'>VueJs</li>
+                    <li>MySQL</li>
+                </ul>
+                <br>
             </p>
         `
     },
@@ -122,16 +150,22 @@ export default ref([
         src: "/portofolio/kmbd.jpg",
         description: `
             <p>
-            Feature: <br>
-            - Organization Profile <br>
-            - Admin Panel/ Content Management System <br>
-            - Member attendance system by using RFID Card <br>
-            <br>
-            Tech Stack: <br>
-            - Laravel <br>
-            - MySql <br>
-            <br>
-            You can access the Organization Profile sites
+                Feature: <br>
+                <ul style='margin: 0; padding: 0 0 0 18px'>
+                    <li style='margin-bottom: 10px'>Organization Profile</li>
+                    <li style='margin-bottom: 10px'>Admin Dashboard/ Content Management System</li>
+                    <li>Member attendance system by using RFID Card</li>
+                </ul>
+                <br>
+                Tech Stack: <br>
+                <br>
+                <ul style='margin: 0; padding: 0 0 0 18px'>
+                    <li style='margin-bottom: 10px'>Laravel</li>
+                    <li>MySQL</li>
+                </ul>
+                <br>
+            </p>
+            You can access the Organization Website
             <a href="https://kmbd.info" target="_blank" style="color: white">here</a>
             </p>
         `

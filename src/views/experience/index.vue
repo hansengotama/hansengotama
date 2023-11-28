@@ -265,7 +265,8 @@ hr {
                         }
 
                         .event-roles {
-                            padding: 10px;
+                            padding-top: 10px;
+
                             .event-role {
                                 color: $white;
                             }
