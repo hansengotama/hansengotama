@@ -113,6 +113,7 @@ $containerPadding: 40px;
                 text-transform: uppercase;
                 font-weight: 500;
                 letter-spacing: 5px;
+                text-align: left;
             }
 
             .line {
@@ -156,11 +157,13 @@ $containerPadding: 40px;
                 font-family: "Futura", serif;
                 font-size: 40px;
                 padding: 30px 0;
+                text-align: left;
             }
 
             .description {
                 font-family: "Roboto", serif;
                 line-height: 24px;
+                text-align: left;
             }
 
             .description-point {

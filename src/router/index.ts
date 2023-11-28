@@ -60,7 +60,6 @@ const router = createRouter({
         }
 
         return {
-            behavior: 'smooth',
             top: 0,
         };
     },

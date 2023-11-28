@@ -105,6 +105,7 @@ hr {
 }
 
 #experience {
+    text-align: left;
     @include text-cannot-edit;
     padding: 20px 20px 70px;
     background: $darkNavy;

@@ -45,6 +45,8 @@ export default defineComponent({
     font-family: "Roboto", serif;
 
     .title {
+        margin: 0 10px;
+        text-align: left;
         font-family: "Futura", sans-serif;
         color: $white;
         font-size: 16px;
@@ -73,6 +75,7 @@ export default defineComponent({
 
             .text-container {
                 padding: 15px;
+                text-align: left;
 
                 .title {
                     margin-bottom: 10px;

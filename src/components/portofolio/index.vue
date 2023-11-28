@@ -15,12 +15,10 @@
                         <div class="title">
                             My Projects
                         </div>
-                        <div class="description">
-                            The portfolio have been made by the mid year of 2018. I enjoy making helpful application for
-                            people.
-                        </div>
                         <div class="button">
-                            <router-link :to="{}">
+                            <router-link :to="{
+                                name: 'Project'
+                            }">
                                 <button>View</button>
                             </router-link>
                         </div>
@@ -68,13 +66,16 @@ export default defineComponent({
         padding: 40px 80px;
 
         .portofolio-title {
-            font-family: "Futura", serif;
+            text-align: left;
+            font-family: "Futura", sans-serif;
             color: $white;
-            margin-bottom: 20px;
+            margin: 0 10px 20px;
+            font-size: 18px;
+            font-weight: 400;
         }
 
         .portofolio-container {
-            margin: 0px 10px;
+            margin: 0 10px;
 
             .images {
                 display: grid;
@@ -115,6 +116,7 @@ export default defineComponent({
                     }
 
                     .button {
+                        text-align: left;
                         margin-top: 25px;
 
                         button {
