@@ -1,0 +1,56 @@
+$thin-weight: 200;
+$light-weight: 300;
+$regular-weight: 400;
+$medium-weight: 500;
+$bold-weight: 600;
+$xbold-weight: 700;
+
+$font-assets-directory: "/src/assets/fonts/";
+
+@mixin font-face($font-family, $font-weight, $filename, $font-style: normal) {
+    @font-face {
+        font-family: $font-family;
+        font-weight: $font-weight;
+        font-style: $font-style;
+        src: url($font-assets-directory + $filename);
+    }
+}
+
+// Roboto
+@include font-face("Roboto", $thin-weight, "roboto/Roboto-Thin.ttf");
+@include font-face("Roboto", $light-weight, "roboto/Roboto-Light.ttf");
+@include font-face("Roboto", $regular-weight, "roboto/Roboto-Regular.ttf");
+@include font-face("Roboto", $medium-weight, "roboto/Roboto-Medium.ttf");
+@include font-face("Roboto", $bold-weight, "roboto/Roboto-Bold.ttf");
+@include font-face("Roboto", $xbold-weight, "roboto/Roboto-Black.ttf");
+
+@include font-face("Roboto", $thin-weight, "roboto/Roboto-ThinItalic.ttf", italic);
+@include font-face("Roboto", $light-weight, "roboto/Roboto-LightItalic.ttf", italic);
+@include font-face("Roboto", $regular-weight, "roboto/Roboto-Italic.ttf", italic);
+@include font-face("Roboto", $medium-weight, "roboto/Roboto-MediumItalic.ttf", italic);
+@include font-face("Roboto", $bold-weight, "roboto/Roboto-BoldItalic.ttf", italic);
+@include font-face("Roboto", $xbold-weight, "roboto/Roboto-BlackItalic.ttf", italic);
+
+// Merriweather
+@include font-face("Merriweather", $light-weight, "merriweather/Merriweather-Light.ttf");
+@include font-face("Merriweather", $regular-weight, "merriweather/Merriweather-Regular.ttf");
+@include font-face("Merriweather", $bold-weight, "merriweather/Merriweather-Bold.ttf");
+@include font-face("Merriweather", $xbold-weight, "merriweather/Merriweather-Black.ttf");
+
+@include font-face("Merriweather", $light-weight, "merriweather/Merriweather-LightItalic.ttf", italic);
+@include font-face("Merriweather", $regular-weight, "merriweather/Merriweather-Italic.ttf", italic);
+@include font-face("Merriweather", $bold-weight, "merriweather/Merriweather-BoldItalic.ttf", italic);
+@include font-face("Merriweather", $xbold-weight, "merriweather/Merriweather-BlackItalic.ttf", italic);
+
+// Futura
+@include font-face("Futura", $thin-weight, "futura/futura-light-bt.ttf");
+@include font-face("Futura", $light-weight, "futura/Futura-Book-font.ttf");
+@include font-face("Futura", $regular-weight, "futura/futura-medium-bt.ttf");
+@include font-face("Futura", $medium-weight, "futura/Futura-Heavy-font.ttf");
+@include font-face("Futura", $bold-weight, "futura/futur.ttf");
+
+@include font-face("Futura", $thin-weight, "futura/Futura-Light-Italic-font.ttf", italic);
+@include font-face("Futura", $light-weight, "futura/Futura-Book-Italic-font.ttf", italic);
+@include font-face("Futura", $regular-weight, "futura/Futura-Medium-Italic-font.ttf", italic);
+@include font-face("Futura", $medium-weight, "futura/Futura-Heavy-Italic-font.ttf", italic);
+@include font-face("Futura", $bold-weight, "futura/Futura-Bold-Italic-font.ttf", italic);
