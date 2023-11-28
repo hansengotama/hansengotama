@@ -31,7 +31,7 @@ export default defineComponent({
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "Roboto";
+    font-family: "Roboto", serif;
     font-weight: 500;
     flex-direction: column;
     background: $navy;
@@ -91,10 +91,10 @@ export default defineComponent({
             margin-top: -90px;
         }
         71% {
-            margin-top: 0px;
+            margin-top: 0;
         }
         99.99% {
-            margin-top: 0px;
+            margin-top: 0;
         }
         100% {
             margin-top: -270px;
