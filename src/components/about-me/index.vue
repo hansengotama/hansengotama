@@ -57,8 +57,8 @@ export default defineComponent({
         return {
             socialMedia: socialMediaStaticData,
             descriptionData: [
-                "A tech geek and startup enthusiast, working as a professional software developer in the e-Learning and e-Commerce industry. Experienced in back-end development, web design and mobile applications with the goals of delivering the best user experience to consumers.",
-                "Experienced in organization management and event planning. Joined non-profit organization supporting various projects, as an event committee, project manager, head of the event, advisor of the event and head of organization.",
+                "With almost 6 years of experience in back-end, mobile, and web development, I have a natural curiosity for problem-solving, especially when things are not as expected. My career goal is to make a meaningful impact on people's lives; that's what I love to do.",
+                "I strongly believe that a well-organized engineering team with industry leading processes can enhance team performance and drive better business outcomes. I enjoy analyzing and improving processes to deliver meaningful value to the organization.",
             ],
             activeDescriptionIndex: 0,
         };
