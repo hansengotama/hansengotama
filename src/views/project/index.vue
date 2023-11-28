@@ -79,7 +79,7 @@ export default defineComponent({
                 text-align: left;
 
                 .title {
-                    margin-bottom: 10px;
+                    margin: 0 0 10px;
                     font-weight: 600;
                     color: $orange;
                     text-transform: uppercase;

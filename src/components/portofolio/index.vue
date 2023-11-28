@@ -2,7 +2,7 @@
     <div id="portofolio">
         <div class="container">
             <div class="portofolio-title">
-                Portofolio
+                Projects
             </div>
 
             <div class="portofolio-container">
@@ -117,17 +117,18 @@ export default defineComponent({
 
                     .button {
                         text-align: left;
-                        margin-top: 25px;
+                        margin-top: 15px;
 
                         button {
                             background: $orange;
                             color: $navy;
                             font-family: "Roboto", serif;
                             padding: 10px 22px;
-                            font-weight: 500;
                             border: none;
                             cursor: pointer;
-                            box-shadow: 2px 2px $navy;
+                            font-weight: 600;
+                            border-radius: 5px;
+                            box-shadow: none;
                         }
                     }
                 }
