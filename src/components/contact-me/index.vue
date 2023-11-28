@@ -7,8 +7,7 @@
                         CONTACT ME 
                     </div>
                     <div class="description">
-                        If you interested to collaborate or looking for website, android or ios development services, 
-                        please feel free to contact me.
+                        Let's connect and discuss how I can bring my expertise and perspective to your organization!
                     </div>
                 </div>
             </div>
@@ -106,8 +105,7 @@ export default defineComponent({
             text-align: center;
             display: flex;
             width: 200px;
-            margin: 0 auto;
-            margin-top: 40px;
+            margin: 40px auto 0;
 
             .linkedin,
             .github,
@@ -115,6 +113,7 @@ export default defineComponent({
             .instagram {
                 margin: 0 auto;
                 width: 20px;
+                cursor: pointer;
             }
         }
     }

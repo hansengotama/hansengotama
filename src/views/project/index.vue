@@ -49,7 +49,8 @@ export default defineComponent({
         text-align: left;
         font-family: "Futura", sans-serif;
         color: $white;
-        font-size: 16px;
+        font-size: 18px;
+        font-weight: 400;
     }
 
     .container {

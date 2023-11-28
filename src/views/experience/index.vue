@@ -24,6 +24,7 @@
                                 <div class="work-time">
                                     {{ role.time }}
                                 </div>
+                                <div class="work-description" v-html="role.description"></div>
                             </div>
                         </div>
                     </div>
@@ -114,7 +115,9 @@ hr {
     .title {
         font-family: "Futura", sans-serif;
         color: $white;
-        font-size: 16px;
+        font-size: 18px;
+        margin: 0 10px;
+        font-weight: 400;
     }
 
     .container {
@@ -151,7 +154,8 @@ hr {
                         }
 
                         .work-roles {
-                            padding: 10px;
+                            padding-top: 10px;
+
                             .work-role {
                                 color: $white;
                             }
@@ -160,6 +164,19 @@ hr {
                                 color: $white;
                                 padding-top: 5px;
                                 font-size: 13px;
+                            }
+
+                            .work-description {
+                                color: $white;
+                                font-size: 16px;
+                                margin-top: 20px;
+                                padding: 20px 30px;
+                                border-radius: 15px;
+                                background-color: $navy;
+                                margin-bottom: 20px;
+                                text-align: justify;
+                                max-height: 300px;
+                                overflow: auto;
                             }
                         }
                     }
@@ -199,7 +216,8 @@ hr {
                         }
 
                         .organization-roles {
-                            padding: 10px;
+                            padding-top: 10px;
+
                             .organization-role {
                                 color: $white;
                             }

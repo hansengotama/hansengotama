@@ -24,13 +24,13 @@ export default ref({
     redirect: {
       name: routeName.PROJECT,
     },
-    url: "/my-project",
+    url: "/project",
   },
   experience: {
     redirect: {
       name: routeName.EXPERIENCE,
     },
-    url: "/my-experience",
+    url: "/experience",
   },
   contact: {
     redirect: {
