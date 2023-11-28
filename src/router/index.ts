@@ -46,7 +46,7 @@ const history = createWebHistory();
 const router = createRouter({
     history,
     routes,
-    scrollBehavior(to: RouteLocationNormalized, from: RouteLocationNormalized, savedPosition) {
+    scrollBehavior(to: RouteLocationNormalized, from: RouteLocationNormalized, _) {
         if (from.name === to.name || to.hash) {
             if (to.hash) return {
                 el: to.hash,
