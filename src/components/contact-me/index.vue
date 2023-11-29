@@ -33,7 +33,7 @@
             <div class="contact">
                 <div class="phone">
                     <fa icon="phone" type="fas"></fa>
-                    <span>081 118 140 32</span>
+                    <span>+6281 118 140 32</span>
                 </div>
                 <div class="email">
                     <fa icon="envelope" type="fas"></fa>
