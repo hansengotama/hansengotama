@@ -11,7 +11,7 @@
                 <div class="work-content">
                     <div v-for="(data, index) in experienceData.works" :key="index" class="work">
                         <div class="work-logo">
-                            <img :src="data.src" />
+                            <img :src="data.src"  alt=""/>
                         </div>
                         <div class="work-data">
                             <div class="work-name">
