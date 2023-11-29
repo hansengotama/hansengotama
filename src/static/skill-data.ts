@@ -41,6 +41,28 @@ export default ref({
       url: "/skill/phalcon.png"
     }, 
   ],
+  database: [
+    {
+      name: "MySQL",
+      url: "/skill/mySQL.png"
+    },
+    {
+      name: "PostgreSQL",
+      url: "/skill/postgreSQL.png"
+    },
+    {
+      name: "MongoDB",
+      url: "/skill/mongoDB.png"
+    },
+    {
+      name: "Scylla",
+      url: "/skill/scylla.png"
+    },
+    {
+      name: "Redis",
+      url: "/skill/redis.png"
+    },
+  ],
   others: [
     {
       name: "Node Js",
@@ -69,6 +91,14 @@ export default ref({
     {
       name: "Git",
       url: "/skill/git.png"
+    },
+    {
+      name: "Faktory",
+      url: "/skill/faktory.png"
+    },
+    {
+      name: "Nats",
+      url: "/skill/nats.png"
     },
   ]
 });

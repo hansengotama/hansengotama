@@ -16,6 +16,11 @@
                     Framework
                 </div>
                 <div class="type"
+                     @click="changeType('database')"
+                     :class="type == 'database' ? 'active' : ''">
+                    Database
+                </div>
+                <div class="type"
                      @click="changeType('others')"
                      :class="type == 'others' ? 'active' : ''">
                     Others
@@ -74,6 +79,10 @@ export default defineComponent({
         }
 
         .skill-types {
+            overflow-x: scroll;
+            white-space:nowrap;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
             font-family: "Futura", serif;
             font-size: 22px;
             display: flex;
@@ -91,6 +100,10 @@ export default defineComponent({
             .type.active {
                 color: white;
             }
+        }
+
+        .skill-types::-webkit-scrollbar {
+            display: none;
         }
 
         .skill-type-container {

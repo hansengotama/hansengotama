@@ -9,7 +9,8 @@ export default ref([
                 Tech Stack: <br>
                 <ul style='margin: 0; padding: 0 0 0 18px'>
                     <li style='margin-bottom: 10px'>Vue 3</li>
-                    <li>TypeScript</li>
+                    <li style='margin-bottom: 10px'>TypeScript</li>
+                    <li>SASS</li>
                 </ul>
             </p>
         `
@@ -86,13 +87,14 @@ export default ref([
             <p>
                 Tech Stack: <br>
                 <ul style='margin: 0; padding: 0 0 0 18px'>
-                    <li>VueJs</li>
+                    <li style='margin-bottom: 10px'>VueJs</li>
+                    <li>Stylus</li>
                 </ul>
                 <br>
             </p>
             <p>
             You can access the sites 
-            <a href="https://landingpage.hansengotama.com" target="_blank" style="color: white">here</a>
+            <a href="https://landingpage-eight-amber.vercel.app" target="_blank" style="color: white">here</a>
             </p>
         `
     },
