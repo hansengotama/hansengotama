@@ -72,7 +72,7 @@ export default ref({
                         "  </ul>"
                 },
                 {
-                    text: "Frontend Developer",
+                    text: "Full Stack Developer",
                     time: "Mar 2018 – Dec 2019",
                     description: "<ul style='margin: 0; padding: 0 0 0 18px'>" +
                         "    <li style='margin-bottom: 10px'>Developed and maintained the main Bahaso website and its back office.</li>\n" +
