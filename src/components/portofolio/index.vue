@@ -28,7 +28,7 @@
         <div class="cta-card">
           <div class="cta-content">
             <h3>More Projects</h3>
-            <p>Explore my full collection of backend and fullstack works.</p>
+            <p>Browse through my previous works and technical experiments.</p>
             <router-link :to="{ name: 'Project' }">
               <button class="primary-btn">View All</button>
             </router-link>

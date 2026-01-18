@@ -6,7 +6,7 @@
           <span class="arrow">←</span> Back to Home
         </router-link>
         <h1 class="title">Technical Works</h1>
-        <p class="subtitle">A selection of enterprise systems, mobile applications, and digital solutions engineered by me.</p>
+        <p class="subtitle">A selection of systems, mobile applications, and digital solutions I have developed.</p>
       </header>
 
       <div class="projects-grid">
