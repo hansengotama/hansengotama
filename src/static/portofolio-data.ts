@@ -2,7 +2,7 @@ import { ref } from "vue";
 
 export default ref([
     {
-        name: "Professional Portfolio",
+        name: "My Portfolio",
         src: "/portofolio/hansenwu.jpg",
         showInHomePage: true,
         role: "Independent Developer",

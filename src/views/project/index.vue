@@ -5,8 +5,8 @@
         <router-link to="/" class="back-link">
           <span class="arrow">←</span> Back to Home
         </router-link>
-        <h1 class="title">Technical Works</h1>
-        <p class="subtitle">A selection of systems, mobile applications, and digital solutions I have developed.</p>
+        <h1 class="title">Projects</h1>
+        <p class="subtitle">My technical experiments and legacy works.</p>
       </header>
 
       <div class="projects-grid">
@@ -73,23 +73,24 @@ const portofolioDataList = computed(() => {
   }
 
   .page-header {
-    margin-bottom: 80px;
+    margin-bottom: 60px; // Slightly less whitespace for a tighter feel
 
     .back-link {
       color: $orange;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 2px;
-      font-weight: 500;
+      font-weight: 600;
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 25px;
-      transition: color 0.3s ease;
+      gap: 8px;
+      margin-bottom: 20px;
+      opacity: 0.8;
+      transition: all 0.3s ease;
 
-      .arrow { transition: transform 0.3s ease; }
       &:hover {
+        opacity: 1;
         color: white;
         .arrow { transform: translateX(-5px); }
       }
@@ -97,18 +98,24 @@ const portofolioDataList = computed(() => {
 
     .title {
       font-family: "Futura", sans-serif;
-      font-size: clamp(32px, 5vw, 48px);
+      font-size: 40px;
       text-transform: uppercase;
-      letter-spacing: 4px;
+      letter-spacing: 2px;
+      font-weight: 800;
       margin: 0;
+      line-height: 1.1;
+
+      @media (max-width: 700px) {
+        font-size: 30px;
+      }
     }
 
     .subtitle {
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 18px;
-      max-width: 600px;
-      margin-top: 20px;
-      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.4); // Muted so the cards stand out
+      font-size: 15px; // Smaller, cleaner size
+      max-width: 500px;
+      margin-top: 12px;
+      line-height: 1.5;
     }
   }
 
