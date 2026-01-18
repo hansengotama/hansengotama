@@ -7,7 +7,7 @@ import {
 } from 'vue-router'
 import { routeName } from "@/static/route-data";
 
-const homeSection = ["", "#skill", "#contact-me"];
+const homeSection = ["", "#skill", "#project", "#contact-me"];
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -21,11 +21,6 @@ const routes: Array<RouteRecordRaw> = [
                 meta: {
                     hash: homeSection,
                 },
-            },
-            {
-                path: "/project",
-                name: routeName.PROJECT,
-                component: () => import("../views/project/index.vue"),
             },
             {
                 path: "/cv",

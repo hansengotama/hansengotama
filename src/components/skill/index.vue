@@ -41,7 +41,7 @@ const skills = ref(skillStaticData);
 
 #skill {
   background: $darkNavy;
-  padding: 60px 0;
+  padding: 80px 0;
   color: white;
   @include text-cannot-edit;
 

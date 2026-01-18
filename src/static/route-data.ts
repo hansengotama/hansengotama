@@ -2,12 +2,11 @@ import { ref } from "vue";
 
 export enum routeName {
   HOME = "Home",
-  PROJECT = "Project",
   CV = "cv",
 }
 
 export default ref({
-  home: {
+  me: {
     redirect: {
       name: routeName.HOME,
     },
@@ -22,15 +21,10 @@ export default ref({
   },
   project: {
     redirect: {
-      name: routeName.PROJECT,
+      name: routeName.HOME,
+      hash: "#project",
     },
-    url: "/project",
-  },
-  CV: {
-    redirect: {
-      name: routeName.CV,
-    },
-    url: "/cv",
+    url: "/#project",
   },
   contact: {
     redirect: {

@@ -7,18 +7,21 @@
           <p class="role">Senior Backend Engineer & Tech Lead</p>
         </div>
 
-        <div class="social-links">
-          <div
-              v-for="(sm, index) in socialMediaList"
-              :key="index"
-              class="icon-item"
-          >
-            <fa
-                :icon="sm.icon"
-                type="fab"
+        <div class="actions-group">
+          <div class="social-links">
+            <div
+                v-for="(sm, index) in socialMediaList"
+                :key="index"
+                class="icon-item"
                 @click="openNewTab(sm.url)"
-            ></fa>
+            >
+              <fa :icon="sm.icon" type="fab"></fa>
+            </div>
           </div>
+
+          <button class="cv-button" @click="openNewTab('/cv')">
+            View CV
+          </button>
         </div>
       </div>
 
@@ -51,7 +54,9 @@ const socialMediaList = computed(() => {
 });
 
 const openNewTab = (url: string) => {
-  if (url) window.open(url, "_blank");
+  if (url) {
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
 };
 </script>
 
@@ -61,7 +66,6 @@ const openNewTab = (url: string) => {
 #about-me {
   text-align: left;
   width: 100% !important;
-  min-height: 60vh;
   background: $navy;
   color: white;
   display: flex;
@@ -79,10 +83,10 @@ const openNewTab = (url: string) => {
 
   .header-section {
     display: flex;
-    flex-direction: row; // Desktop default
+    flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     width: 100%;
 
     h1 {
@@ -98,31 +102,60 @@ const openNewTab = (url: string) => {
       font-family: "Roboto", sans-serif;
       font-size: 14px;
       color: $orange;
-      margin: 10px 0 0 0;
+      margin: 8px 0 0 0;
       text-transform: uppercase;
       letter-spacing: 1.2px;
       font-weight: 500;
     }
 
-    .social-links {
+    .actions-group {
       display: flex;
-      gap: 20px;
       align-items: center;
+      gap: 24px;
 
-      .icon-item {
-        display: inline-flex;
-        font-size: 24px;
+      .social-links {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+
+        .icon-item {
+          display: inline-flex;
+          font-size: 22px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          color: rgba(255, 255, 255, 0.7);
+
+          &:hover {
+            color: $orange;
+            transform: translateY(-2px);
+          }
+
+          svg {
+            display: block;
+            width: 1em;
+            height: 1em;
+          }
+        }
+      }
+
+      .cv-button {
+        background: transparent;
+        border: 1px solid rgba($orange, 0.5);
+        color: $orange;
+        padding: 8px 16px;
+        font-family: "Roboto", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-radius: 4px;
         cursor: pointer;
-        transition: color 0.3s ease;
+        transition: all 0.3s ease;
 
         &:hover {
-          color: $orange;
-        }
-
-        svg {
-          display: block;
-          width: 1em;
-          height: 1em;
+          background: rgba($orange, 0.1);
+          border-color: $orange;
+          transform: translateY(-2px);
         }
       }
     }
@@ -131,8 +164,8 @@ const openNewTab = (url: string) => {
   .divider {
     width: 100%;
     height: 1px;
-    background: rgba(255, 255, 255, 0.15);
-    margin: 20px 0 30px 0;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 25px 0 35px 0;
   }
 
   .bio-section {
@@ -141,36 +174,28 @@ const openNewTab = (url: string) => {
       font-size: 16px;
       line-height: 1.8;
       margin-bottom: 20px;
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(255, 255, 255, 0.7);
       font-weight: 300;
+      max-width: 900px;
     }
   }
 
-  /* --- FORCED RESPONSIVE RULES --- */
-
-  @media screen and (max-width: 700px) {
+  /* --- RESPONSIVE ADJUSTMENTS --- */
+  @media screen and (max-width: 768px) {
     #about-me {
-      padding: 40px 20px !important;
-      height: auto !important; // Allow container to grow with content
+      padding: 60px 24px;
     }
 
     .header-section {
-      flex-direction: column !important; // Force stack
+      flex-direction: column !important;
       align-items: flex-start !important;
-      gap: 20px !important;
+      gap: 25px;
 
-      h1 {
-        font-size: 26px !important;
+      .actions-group {
+        width: 100%;
+        justify-content: space-between;
+        flex-direction: row-reverse;
       }
-    }
-
-    .social-links {
-      justify-content: flex-start !important;
-      width: 100% !important;
-    }
-
-    .bio-section p {
-      font-size: 15px !important;
     }
   }
 }
