@@ -2,9 +2,11 @@
   <div id="project-page">
     <div class="container">
       <header class="page-header">
-        <router-link to="/" class="back-link">← Back to Home</router-link>
-        <h1 class="title">My Projects</h1>
-        <p class="subtitle">A comprehensive gallery of systems and applications I've engineered.</p>
+        <router-link to="/" class="back-link">
+          <span class="arrow">←</span> Back to Home
+        </router-link>
+        <h1 class="title">Technical Works</h1>
+        <p class="subtitle">A selection of enterprise systems, mobile applications, and digital solutions engineered by me.</p>
       </header>
 
       <div class="projects-grid">
@@ -15,14 +17,30 @@
         >
           <div class="image-section">
             <img :src="data.src" :alt="data.name">
-            <div class="image-overlay"></div>
+            <div class="role-badge" :class="data.role.toLowerCase().replace(/\s+/g, '-')">
+              {{ data.role }}
+            </div>
           </div>
 
           <div class="content-section">
             <h2 class="project-title">{{ data.name }}</h2>
-            <div class="divider"></div>
-            <div class="project-details">
-              <div class="description-text" v-html="data.description"></div>
+
+            <p class="description-text">{{ data.description }}</p>
+
+            <div class="tag-container">
+              <span v-for="tag in data.tags" :key="tag" class="tag">{{ tag }}</span>
+            </div>
+
+            <div class="footer-section" v-if="data.links && data.links.length">
+              <a
+                  v-for="link in data.links"
+                  :key="link.url"
+                  :href="link.url"
+                  target="_blank"
+                  class="project-link"
+              >
+                {{ link.label }}
+              </a>
             </div>
           </div>
         </div>
@@ -35,7 +53,6 @@
 import { computed } from "vue";
 import portofolioStaticData from "@/static/portofolio-data";
 
-// Unwrap the ref data safely
 const portofolioDataList = computed(() => {
   return portofolioStaticData.value || [];
 });
@@ -45,11 +62,10 @@ const portofolioDataList = computed(() => {
 @import "@/scss/index.scss";
 
 #project-page {
-  text-align: left;
-  min-height: 100vh;
   background: $darkNavy;
-  padding: 80px 20px;
+  padding: 100px 20px;
   color: white;
+  text-align: left;
 
   .container {
     max-width: 1200px;
@@ -57,155 +73,172 @@ const portofolioDataList = computed(() => {
   }
 
   .page-header {
-    margin-bottom: 60px;
-    text-align: left;
+    margin-bottom: 80px;
 
     .back-link {
       color: $orange;
       text-decoration: none;
-      font-family: "Roboto", sans-serif;
       font-size: 14px;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      display: inline-block;
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
+      letter-spacing: 2px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 25px;
+      transition: color 0.3s ease;
 
+      .arrow { transition: transform 0.3s ease; }
       &:hover {
-        transform: translateX(-5px);
+        color: white;
+        .arrow { transform: translateX(-5px); }
       }
     }
 
     .title {
       font-family: "Futura", sans-serif;
-      font-size: 42px;
+      font-size: clamp(32px, 5vw, 48px);
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 4px;
       margin: 0;
-      line-height: 1;
     }
 
     .subtitle {
-      font-family: "Roboto", sans-serif;
-      color: rgba(255, 255, 255, 0.6);
-      margin-top: 15px;
-      font-size: 16px;
-      font-weight: 300;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 18px;
+      max-width: 600px;
+      margin-top: 20px;
+      line-height: 1.6;
     }
   }
 
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 40px 30px;
   }
 
   .project-card {
-    background: lighten($darkNavy, 3%);
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.4s ease;
 
     &:hover {
       transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba($orange, 0.3);
 
-      .image-section img {
-        transform: scale(1.05);
-      }
+      .image-section img { transform: scale(1.05); opacity: 1; }
     }
 
     .image-section {
-      height: 200px;
-      overflow: hidden;
+      height: 220px;
       position: relative;
+      overflow: hidden;
 
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.6s ease;
         opacity: 0.8;
+        transition: all 0.6s ease;
       }
 
-      .image-overlay {
+      .role-badge {
         position: absolute;
-        inset: 0;
-        background: linear-gradient(to bottom, transparent, rgba($darkNavy, 0.3));
+        top: 15px;
+        right: 15px;
+        background: rgba($darkNavy, 0.8);
+        backdrop-filter: blur(4px);
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: $orange;
+        border: 1px solid rgba($orange, 0.3);
+      }
+
+      .role-badge {
+        &.solo-developer, &.lead-architect {
+          color: $orange !important;
+          border-color: $orange !important;
+        }
+        &.hobbyist {
+          color: rgba(255, 255, 255, 0.5) !important;
+          border-color: rgba(255, 255, 255, 0.2) !important;
+        }
       }
     }
 
     .content-section {
-      padding: 25px;
-      flex-grow: 1;
+      padding: 30px;
       display: flex;
       flex-direction: column;
+      flex-grow: 1;
 
       .project-title {
         font-family: "Futura", sans-serif;
-        color: $orange;
-        font-size: 18px;
-        text-transform: uppercase;
+        font-size: 20px;
         letter-spacing: 1px;
         margin: 0 0 15px;
-      }
-
-      .divider {
-        width: 40px;
-        height: 2px;
-        background: $orange;
-        margin-bottom: 20px;
+        color: white;
       }
 
       .description-text {
-        font-family: "Roboto", sans-serif;
         font-size: 14px;
         line-height: 1.6;
-        color: rgba(255, 255, 255, 0.8);
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 25px;
+        flex-grow: 1;
+      }
 
-        /* Deep selector to style the HTML tags from your data */
-        ::v-deep(p) { margin: 0; }
-        ::v-deep(ul) {
-          list-style: none;
-          padding-left: 0 !important;
-          li {
-            position: relative;
-            padding-left: 15px;
-            margin-bottom: 8px;
-            &::before {
-              content: "•";
-              color: $orange;
-              position: absolute;
-              left: 0;
-            }
-          }
+      .tag-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 25px;
+
+        .tag {
+          font-size: 11px;
+          background: rgba(255, 255, 255, 0.05);
+          padding: 4px 10px;
+          border-radius: 4px;
+          color: rgba(255, 255, 255, 0.8);
+          border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        ::v-deep(a) {
-          color: $orange !important;
-          text-decoration: underline;
-          font-weight: 500;
+      }
+
+      .footer-section {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 20px;
+
+        .project-link {
+          color: $orange;
+          text-decoration: none;
+          font-size: 14px;
+          font-weight: 600;
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+
+          &:hover { text-decoration: underline; }
         }
       }
     }
   }
 
-  /* Responsive Design */
   @media (max-width: 1100px) {
     .projects-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 700px) {
-    padding: 60px 20px;
-    .page-header .title { font-size: 32px; }
     .projects-grid { grid-template-columns: 1fr; }
-
-    .project-card {
-      max-width: 450px;
-      margin: 0 auto;
-    }
+    .page-header .title { font-size: 32px; }
   }
 }
 </style>

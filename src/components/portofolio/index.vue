@@ -8,26 +8,29 @@
 
       <div class="projects-grid">
         <div
-            v-for="(data, index) in featuredProjects"
+            v-for="(data, index) in limitedProjects"
             :key="index"
             class="project-card"
         >
           <div class="image-wrapper">
-            <img :src="data.src" :alt="data.title || 'Project Screenshot'" loading="lazy" />
+            <img :src="data.src" :alt="data.name" loading="lazy" />
             <div class="overlay">
               <router-link :to="{ name: 'Project' }" class="view-link">
                 View Details
               </router-link>
             </div>
           </div>
+          <div class="project-info">
+            <h3>{{ data.name }}</h3>
+          </div>
         </div>
 
         <div class="cta-card">
           <div class="cta-content">
             <h3>More Projects</h3>
-            <p>A collection of backend systems, mobile apps, and web platforms.</p>
+            <p>Explore my full collection of backend and fullstack works.</p>
             <router-link :to="{ name: 'Project' }">
-              <button class="primary-btn">View All Works</button>
+              <button class="primary-btn">View All</button>
             </router-link>
           </div>
         </div>
@@ -37,13 +40,35 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, onMounted, onUnmounted, ref } from "vue";
 import portofolioStaticData from "@/static/portofolio-data";
 
-// FIX: Safely unwrap the .value since the data is a ref
-const featuredProjects = computed(() => {
+const windowWidth = ref(typeof window !== 'undefined' ? window.innerWidth : 1200);
+
+const updateWidth = () => {
+  windowWidth.value = window.innerWidth;
+};
+
+onMounted(() => window.addEventListener('resize', updateWidth));
+onUnmounted(() => window.removeEventListener('resize', updateWidth));
+
+const limitedProjects = computed(() => {
   const dataArray = portofolioStaticData.value || [];
-  return dataArray.filter((item: any) => item.showInHomePage).slice(0, 3);
+  const featured = dataArray.filter((item: any) => item.showInHomePage);
+
+  // Logic:
+  // Desktop (>1000px): 3 columns -> Show 5 projects + 1 CTA = 6 total (2 rows)
+  // Tablet (600px-1000px): 2 columns -> Show 3 projects + 1 CTA = 4 total (2 rows)
+  // Mobile (<600px): 1 column -> Show 3 projects + 1 CTA = 4 total (4 rows)
+
+  let limit = 5;
+  if (windowWidth.value <= 1000 && windowWidth.value > 600) {
+    limit = 3;
+  } else if (windowWidth.value <= 600) {
+    limit = 3;
+  }
+
+  return featured.slice(0, limit);
 });
 </script>
 
@@ -52,132 +77,117 @@ const featuredProjects = computed(() => {
 
 #portofolio {
   background: $darkNavy;
-  padding: 80px 0;
+  padding: 100px 0;
   color: white;
 
   .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
   }
 
   .header {
-    margin-bottom: 40px;
-    text-align: left;
-
+    margin-bottom: 50px;
     .label {
       color: $orange;
-      font-family: "Roboto", sans-serif;
       text-transform: uppercase;
       letter-spacing: 2px;
       font-size: 13px;
-      font-weight: 500;
     }
-
     .section-title {
       font-family: "Futura", sans-serif;
-      font-size: 32px;
+      font-size: clamp(24px, 5vw, 36px);
       margin-top: 8px;
       text-transform: uppercase;
-      letter-spacing: 1px;
     }
   }
 
   .projects-grid {
     display: grid;
-    // Desktop: 2 or 3 columns, Mobile: 1 column
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    // Set explicit columns
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+
+    @media (max-width: 1000px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   .project-card {
-    position: relative;
-    border-radius: 8px;
+    background: lighten($darkNavy, 2%);
+    border-radius: 12px;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.03);
-    aspect-ratio: 16 / 10;
-    transition: all 0.4s ease;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
 
     &:hover {
-      transform: translateY(-8px);
-      border-color: rgba($orange, 0.3);
+      transform: translateY(-5px);
       .overlay { opacity: 1; }
-      img { transform: scale(1.05); opacity: 0.4; }
     }
 
     .image-wrapper {
-      width: 100%;
-      height: 100%;
       position: relative;
+      aspect-ratio: 16 / 9;
       background: #000;
-
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: all 0.6s ease;
-        opacity: 0.7; // Professional dimmed look
+        opacity: 0.7;
       }
     }
 
-    .overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-
-      .view-link {
-        color: white;
-        font-family: "Roboto", sans-serif;
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 500;
-        border: 1px solid white;
-        padding: 8px 16px;
-        border-radius: 4px;
-        transition: all 0.3s;
-
-        &:hover {
-          background: white;
-          color: $navy;
-        }
+    .project-info {
+      padding: 15px;
+      h3 {
+        font-size: 16px;
+        color: $orange;
+        margin: 0;
+        text-transform: uppercase;
+        font-family: "Futura", sans-serif;
       }
     }
   }
 
-  .cta-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px dashed rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba($navy, 0.4);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
-    text-align: center;
-    transition: border-color 0.3s;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 
-    &:hover {
-      border-color: $orange;
+    .view-link {
+      color: white;
+      border: 1px solid white;
+      padding: 8px 16px;
+      text-decoration: none;
+      font-size: 13px;
+      border-radius: 4px;
+      &:hover { background: white; color: $navy; }
     }
+  }
+
+  .cta-card {
+    background: rgba($orange, 0.05);
+    border: 2px dashed rgba($orange, 0.2);
+    border-radius: 12px;
+    display: flex;
+    text-align: center;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
 
     .cta-content {
-      h3 {
-        font-family: "Futura", sans-serif;
-        font-size: 20px;
-        margin-bottom: 8px;
-        text-transform: uppercase;
-      }
-      p {
-        font-family: "Roboto", sans-serif;
-        font-size: 13px;
-        color: rgba(255, 255, 255, 0.5);
-        margin-bottom: 20px;
-        line-height: 1.5;
-      }
+      h3 { font-family: "Futura", sans-serif; color: white; margin-bottom: 10px; }
+      p { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 20px; }
     }
   }
 
@@ -186,29 +196,9 @@ const featuredProjects = computed(() => {
     color: $navy;
     border: none;
     padding: 10px 24px;
-    font-family: "Roboto", sans-serif;
-    font-weight: 600;
-    font-size: 14px;
+    font-weight: 700;
     border-radius: 4px;
     cursor: pointer;
-    transition: transform 0.2s;
-
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
-
-  /* Responsive Adjustments */
-  @media (max-width: 600px) {
-    padding: 60px 0;
-
-    .header .section-title {
-      font-size: 26px;
-    }
-
-    .projects-grid {
-      grid-template-columns: 1fr;
-    }
   }
 }
 </style>

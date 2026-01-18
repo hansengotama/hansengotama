@@ -2,174 +2,61 @@ import { ref } from "vue";
 
 export default ref([
     {
-        name: "My Personal Website",
+        name: "Professional Portfolio",
         src: "/portofolio/hansenwu.jpg",
-        description: `
-            <p>
-                Tech Stack: <br>
-                <ul style='margin: 0; padding: 0 0 0 18px'>
-                    <li style='margin-bottom: 10px'>Vue 3</li>
-                    <li style='margin-bottom: 10px'>TypeScript</li>
-                    <li>SASS</li>
-                </ul>
-            </p>
-        `
+        showInHomePage: true,
+        role: "Independent Developer",
+        description: "A simple site built to share my profile and connect with others for potential collaborations.",
+        tags: ["Vue 3", "TypeScript", "SASS", "Vite"],
     },
     {
-        name: "Event Tracker",
-        src: "/portofolio/event-tracker.jpg",
-        description: `
-            <p>
-                Tech Stack: <br>
-                <ul style='margin: 0; padding: 0 0 0 18px'>
-                    <li style='margin-bottom: 10px'>Flutter</li>
-                    <li>Sqlite</li>
-                </ul>
-                <br>
-                You can access the video   
-                <a href="https://www.youtube.com/watch?v=m1o9LBP-9NI" target="_blank" style="color: white">here</a>
-            </p>
-        `
-    },
-    {
-        name: "Pattidana CDM",
+        name: "Pattidana CDM System",
         src: "/portofolio/pattidana.jpg",
         showInHomePage: true,
-        description: `
-            <p>
-                Feature: <br>
-                <ul style='margin: 0; padding: 0 0 0 18px'>
-                    <li style='margin-bottom: 10px'>Admin Dashboard</li>
-                    <li style='margin-bottom: 10px'>Cashier Dashboard</li>
-                    <li>Event information & register ancestor</li>
-                </ul>
-                <br>
-                Tech Stack: <br>
-                <br>
-                <ul style='margin: 0; padding: 0 0 0 18px'>
-                    <li style='margin-bottom: 10px'>Laravel</li>
-                    <li style='margin-bottom: 10px'>MySQL</li>
-                    <li>VueJs</li>
-                </ul>
-                <br>
-                You can access the Pattidana Event sites  
-                <a href="https://pattidana.dhammamanggala.org" target="_blank" style="color: white">here</a>
-            </p>
-        `
-    },
-    {
-        name: "SDATR Pasuruan",
-        src: "/portofolio/sdatr-pasuruan.jpg",
-        showInHomePage: true,
-        description: `
-            <p>
-                Feature: <br>
-                <ul style='margin: 0; padding: 0 0 0 18px'>
-                    <li style='margin-bottom: 10px'>Admin Dashboard/ Content Management System</li>
-                    <li style='margin-bottom: 10px'>SDATR profile & information</li>
-                    <li>Submission for “Peil Banjir” and “Rekom Tanah pengairan”</li>
-                </ul>
-                <br>
-                Tech Stack: <br>
-                <br>
-                <ul style='margin: 0; padding: 0 0 0 18px'>
-                    <li style='margin-bottom: 10px'>Laravel</li>
-                    <li>MySQL</li>
-                </ul>
-                <br>
-            </p>
-        `
-    },
-    {
-        name: "Landing Page",
-        src: "/portofolio/landing-page.jpg",
-        description: `
-            <p>
-                Tech Stack: <br>
-                <ul style='margin: 0; padding: 0 0 0 18px'>
-                    <li style='margin-bottom: 10px'>VueJs</li>
-                    <li>Stylus</li>
-                </ul>
-                <br>
-            </p>
-            <p>
-            You can access the sites 
-            <a href="https://landingpage-eight-amber.vercel.app" target="_blank" style="color: white">here</a>
-            </p>
-        `
-    },
-    {
-        name: "Hotel Bintang Mulia",
-        src: "/portofolio/bintang-mulia.jpg",
-        showInHomePage: true,
-        description: `
-            <p>
-                Feature: <br>
-                <ul style='margin: 0; padding: 0 0 0 18px'>
-                    <li>Hotel profile and information</li>
-                </ul>
-                <br>
-                Tech Stack: <br>
-                <br>
-                <ul style='margin: 0; padding: 0 0 0 18px'>
-                    <li style='margin-bottom: 10px'>Laravel</li>
-                    <li>VueJs</li>
-                </ul>
-                <br>
-            </p>
-        `
+        role: "Independent Developer",
+        description: "Built and maintained this system since 2020. It handles yearly event registrations for ~2,000 entries, including a user portal and a manual verification flow for donations.",
+        tags: ["Laravel", "MySQL", "Vue.js"],
+        links: [{ label: "Visit Site", url: "https://pattidana.dhammamanggala.org" }]
     },
     {
         name: "Schoolah",
         src: "/portofolio/schoolah.jpg",
         showInHomePage: true,
-        description: `
-            <p>
-                Feature: <br>
-                <ul style='margin: 0; padding: 0 0 0 18px'>
-                    <li style='margin-bottom: 10px'>Student Attendance</li>
-                    <li style='margin-bottom: 10px'>Student Tuition Fee Reminder</li>
-                    <li style='margin-bottom: 10px'>Teacher & Student Schedule</li>
-                    <li style='margin-bottom: 10px'>Student Online Quiz and Exam</li>
-                    <li style='margin-bottom: 10px'>Student Assignment</li>
-                    <li style='margin-bottom: 10px'>Forum Chat between Student and Teacher</li>
-                    <li>Forum Chat between Student and Teacher</li>
-                </ul>
-                <br>
-                Tech Stack: <br>
-                <br>
-                <ul style='margin: 0; padding: 0 0 0 18px'>
-                    <li style='margin-bottom: 10px'>Laravel</li>
-                    <li style='margin-bottom: 10px'>VueJs</li>
-                    <li>MySQL</li>
-                </ul>
-                <br>
-            </p>
-        `
+        role: "Independent Developer",
+        description: "A university final project covering student attendance, tuition reminders, online exams, and a teacher-student chat forum.",
+        tags: ["Laravel", "Vue.js", "MySQL"],
     },
     {
-        name: "KMBD",
+        name: "KMBD Organization",
         src: "/portofolio/kmbd.jpg",
-        description: `
-            <p>
-                Feature: <br>
-                <ul style='margin: 0; padding: 0 0 0 18px'>
-                    <li style='margin-bottom: 10px'>Organization Profile</li>
-                    <li style='margin-bottom: 10px'>Admin Dashboard/ Content Management System</li>
-                    <li>Member attendance system by using RFID Card</li>
-                </ul>
-                <br>
-                Tech Stack: <br>
-                <br>
-                <ul style='margin: 0; padding: 0 0 0 18px'>
-                    <li style='margin-bottom: 10px'>Laravel</li>
-                    <li>MySQL</li>
-                </ul>
-                <br>
-            </p>
-            You can access the Organization Website
-            <a href="https://kmbd.info" target="_blank" style="color: white">here</a>
-            </p>
-        `
+        showInHomePage: true,
+        role: "Independent Developer",
+        description: "My debut project. Developed the organization's website and CMS. Integrated an RFID-based system for tracking member attendance at events.",
+        tags: ["Laravel", "MySQL", "RFID Integration"],
+        links: [{ label: "Visit Site", url: "https://kmbd.info" }]
     },
-])
+    {
+        name: "Hotel Bintang Mulia",
+        src: "/portofolio/bintang-mulia.jpg",
+        showInHomePage: true,
+        role: "Independent Developer",
+        description: "Created a landing page to provide information and a digital presence for the hotel.",
+        tags: ["Laravel", "Vue.js"],
+    },
+    {
+        name: "Event Tracker",
+        src: "/portofolio/event-tracker.jpg",
+        role: "Hobbyist",
+        description: "A mobile app project created to learn Flutter and SQLite for offline data tracking.",
+        tags: ["Flutter", "SQLite", "Dart"],
+        links: [{ label: "Demo Video", url: "https://www.youtube.com/watch?v=m1o9LBP-9NI" }]
+    },
+    {
+        name: "Landing Page",
+        src: "/portofolio/landing-page.jpg",
+        role: "Hobbyist",
+        description: "An exploratory project built to practice modern front-end styling and component structure.",
+        tags: ["Vue.js", "Stylus"],
+        links: [{ label: "Visit Site", url: "https://landingpage-eight-amber.vercel.app" }]
+    }
+]);
