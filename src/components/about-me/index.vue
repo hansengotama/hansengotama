@@ -51,7 +51,6 @@
 import {defineComponent} from "vue";
 
 import socialMediaStaticData from "@/static/social-media-data";
-
 export default defineComponent({
     data() {
         return {
