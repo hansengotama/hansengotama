@@ -28,9 +28,9 @@ const routes: Array<RouteRecordRaw> = [
                 component: () => import("../views/project/index.vue"),
             },
             {
-                path: "/experience",
-                name: routeName.EXPERIENCE,
-                component: () => import("../views/experience/index.vue"),
+                path: "/cv",
+                name: routeName.CV,
+                component: () => import("../views/cv/index.vue"),
             },
         ],
     },

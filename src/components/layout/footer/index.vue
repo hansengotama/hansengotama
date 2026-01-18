@@ -1,5 +1,5 @@
 <template>
-    <div class="footer">
+    <div id="footer" class="footer">
         <div>© 2023 | Hansen</div>
     </div>
 </template>

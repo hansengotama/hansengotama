@@ -3,7 +3,7 @@ import { ref } from "vue";
 export enum routeName {
   HOME = "Home",
   PROJECT = "Project",
-  EXPERIENCE = "Experience",
+  CV = "cv",
 }
 
 export default ref({
@@ -26,11 +26,11 @@ export default ref({
     },
     url: "/project",
   },
-  experience: {
+  CV: {
     redirect: {
-      name: routeName.EXPERIENCE,
+      name: routeName.CV,
     },
-    url: "/experience",
+    url: "/cv",
   },
   contact: {
     redirect: {
