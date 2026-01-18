@@ -1,194 +1,223 @@
 <template>
-    <div id="contact-me">
-        <div class="container">
-            <div class="qoutes">
-                <div class="qoutes-container">
-                    <div class="title">
-                        CONTACT ME 
-                    </div>
-                    <div class="description">
-                        Let's connect and discuss how I can bring my expertise and perspective to your organization!
-                    </div>
-                </div>
+  <div id="contact-me">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="identity-side">
+          <header class="section-header">
+            <span class="label">- Connection</span>
+            <h2 class="title">CONTACT ME</h2>
+          </header>
+
+          <div class="social-links-block">
+            <span class="sub-label">Social Media</span>
+            <div class="social-links">
+              <div
+                  v-for="(sm, index) in socialMediaList"
+                  :key="index"
+                  class="icon-item"
+                  @click="openNewTab(sm.url)"
+              >
+                <fa :icon="sm.icon" type="fab" />
+              </div>
             </div>
-            <div class="media-social">
-                <div class="title">
-                    Social media
-                </div>
-                <div class="social-media">
-                    <div
-                        :class="sm.icon"
-                        v-for="(sm, index) in socialMedia"
-                        :key="index"
-                    >
-                        <fa
-                            :icon="sm.icon"
-                            type="fab"
-                            @click="openNewTab(sm.url)"
-                        ></fa>
-                    </div>
-                </div>
-            </div>
-            <div class="contact">
-                <div class="phone">
-                    <fa icon="phone" type="fas"></fa>
-                    <span>+6281 118 140 32</span>
-                </div>
-                <div class="email">
-                    <fa icon="envelope" type="fas"></fa>
-                    <span>hansenwu98@gmail.com</span>
-                </div>
-                <div class="location">
-                    <span>Jakarta, Indonesia</span>
-                </div>
-            </div>
+          </div>
         </div>
+
+        <div class="details-side">
+          <div class="details-card">
+
+            <a href="tel:+628111814032" class="detail-row">
+              <div class="icon-box">
+                <fa icon="phone" type="fas" />
+              </div>
+              <div class="info">
+                <span class="tag">Direct Line</span>
+                <span class="val">+6281 118 140 32</span>
+              </div>
+            </a>
+
+            <a href="mailto:hansenwu98@gmail.com" class="detail-row">
+              <div class="icon-box">
+                <fa icon="envelope" type="fas" />
+              </div>
+              <div class="info">
+                <span class="tag">Email Address</span>
+                <span class="val">hansenwu98@gmail.com</span>
+              </div>
+            </a>
+
+            <div class="detail-row">
+              <div class="icon-box">
+                <fa icon="location-dot" type="fas" />
+              </div>
+              <div class="info">
+                <span class="tag">Base Location</span>
+                <span class="val">Jakarta, Indonesia</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import socialMediaStaticData from "@/static/social-media-data";
+<script setup lang="ts">
+import { computed } from "vue";
+import socialMediaData from "@/static/social-media-data";
 
-export default defineComponent({
-  data() {
-    return {
-      socialMedia: socialMediaStaticData,
-    };
-  },
-  methods: {
-    openNewTab(url: string) {
-      window.open(url, "_blank");
-    }
-  }
+const socialMediaList = computed(() => {
+  return socialMediaData.value || [];
 });
+
+const openNewTab = (url: string) => {
+  if (url) window.open(url, "_blank");
+};
 </script>
 
 <style lang="scss" scoped>
 @import "@/scss/index.scss";
 
 #contact-me {
-  @include text-cannot-edit;
-  
+  text-align: left;
   background: $navy;
-  font-family: "Futura", serif;
+  color: $white;
+  padding: 60px 0;
+  font-family: "Futura", sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  @include text-cannot-edit;
 
   .container {
-    padding: 40px 80px;
-    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
 
-    .qoutes {
-        flex: 1;
-        color: $white;
-        align-items: center;
-        text-align: center;
-        
-        .qoutes-container {
-            width: 300px;
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
 
-            .title {
-                text-transform: uppercase;
-                margin-bottom: 10px;
-            }
-        }
+  // Left Column Styling
+  .identity-side {
+    .section-header {
+      margin-bottom: 40px;
+      .label {
+        color: $orange;
+        font-size: 13px;
+        font-family: monospace;
+        letter-spacing: 2px;
+      }
+      .title { font-family: "Futura", sans-serif; font-size: 26px; text-transform: uppercase; margin-top: 5px; }
     }
 
-    .media-social {
-        flex: 1;
-        color: $white;
-
-        .title {
-            text-align: center;
-        }
-
-        .social-media {
-            text-align: center;
-            display: flex;
-            width: 200px;
-            margin: 40px auto 0;
-
-            .linkedin,
-            .github,
-            .hackerrank,
-            .instagram {
-                margin: 0 auto;
-                width: 20px;
-                cursor: pointer;
-            }
-        }
+    .sub-label {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: rgba(255, 255, 255, 0.3);
+      margin-bottom: 20px;
     }
 
-    .contact {
-        flex: 1;
+    // Social links using your reference logic
+    .social-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+
+      .icon-item {
+        display: inline-flex;
+        font-size: 26px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: rgba(255, 255, 255, 0.4);
+
+        &:hover {
+          color: $orange;
+          transform: translateY(-4px);
+        }
+
+        svg {
+          display: block;
+          width: 1em;
+          height: 1em;
+        }
+      }
+    }
+  }
+
+  // Right Column Styling
+  .details-side {
+    .details-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      transition: border-color 0.3s ease;
+
+      &:hover {
+        border-color: rgba($orange, 0.2);
+      }
+    }
+
+    .detail-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      text-decoration: none;
+      color: inherit;
+
+      .icon-box {
+        font-size: 18px;
+        color: $orange;
+        width: 20px;
         display: flex;
         justify-content: center;
+      }
+
+      .info {
+        display: flex;
         flex-direction: column;
-        color: $white;
-
-        .phone {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 15px;
-
-            svg {
-                margin-right: 10px;
-                width: 16px;
-            }
+        .tag {
+          font-size: 10px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          color: rgba(255, 255, 255, 0.3);
         }
-
-        .email {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 15px;
-
-            svg {
-                margin-right: 10px;
-                width: 16px;
-            }
+        .val {
+          font-size: 16px;
+          color: rgba(255, 255, 255, 0.9);
+          margin-top: 4px;
+          transition: color 0.3s;
         }
+      }
 
-        .location {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 15px;
-            
-            svg {
-                margin-right: 10px;
-                width: 16px;
-            }
-        }
+      &:hover .val {
+        color: $orange;
+      }
     }
   }
 
-  @media (max-width: 1200px) {
-    .container {
-      padding: 40px 40px;
+  // Responsive logic
+  @media screen and (max-width: 768px) {
+    padding: 80px 0;
+    .contact-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 60px;
     }
-  }
-
-  @media (max-width: 950px) {
-    .container {
-      flex-direction: column;
-
-        .qoutes {
-            margin: 0 auto;
-        }
-
-        .media-social {
-            margin-bottom: 20px;
-
-            .title {
-                display: none;
-            }
-        }
-    }
-  }
-
-  @media (max-width: 500px) {
-    .container {
-      padding: 40px 20px;
+    .identity-side .social-links { justify-content: center; }
+    .details-side .detail-row {
+      justify-content: center;
+      text-align: left;
     }
   }
 }

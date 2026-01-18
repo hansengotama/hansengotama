@@ -1,104 +1,38 @@
-import { ref } from "vue";
-
-export default ref({
-  language: [
-      {
-        name: "Javascript",
-        url: "/skill/js.png"
-      },    
-      {
-        name: "Typescript",
-        url: "/skill/ts.png"
-      },
-      {
-        name: "PHP",
-        url: "/skill/php.png"
-      },
-      {
-        name: "Dart",
-        url: "/skill/dart.png"
-      },
-      {
-        name: "Go",
-        url: "/skill/go.png"
-      },
+export default {
+  "Programming Languages": [
+    { name: "Go", url: "/skill/go.png" },
+    { name: "PHP", url: "/skill/php.png" },
+    { name: "TypeScript", url: "/skill/ts.png" },
+    { name: "JavaScript", url: "/skill/js.png" },
+    { name: "Dart", url: "/skill/dart.png" },
   ],
-  framework: [
-    {
-      name: "Flutter",
-      url: "/skill/flutter.png"
-    },
-    {
-      name: "Vue JS",
-      url: "/skill/vue.png"
-    }, 
-    {
-      name: "Laravel",
-      url: "/skill/laravel.png"
-    }, 
-    {
-      name: "Phalcon",
-      url: "/skill/phalcon.png"
-    }, 
+  "Backend & Systems": [
+    { name: "Node.js", url: "/skill/nodejs.png" },
+    { name: "Laravel", url: "/skill/laravel.png" },
+    { name: "Phalcon", url: "/skill/phalcon.png" },
+    { name: "NATS", url: "/skill/nats.png" },
+    { name: "Faktory", url: "/skill/faktory.png" },
   ],
-  database: [
-    {
-      name: "MySQL",
-      url: "/skill/mySQL.png"
-    },
-    {
-      name: "PostgreSQL",
-      url: "/skill/postgreSQL.png"
-    },
-    {
-      name: "MongoDB",
-      url: "/skill/mongoDB.png"
-    },
-    {
-      name: "Scylla",
-      url: "/skill/scylla.png"
-    },
-    {
-      name: "Redis",
-      url: "/skill/redis.png"
-    },
+  "Infrastructure & DevOps": [
+    { name: "Docker", url: "" },
+    { name: "GitHub Actions", url: "" },
+    { name: "Git", url: "/skill/git.png" },
   ],
-  others: [
-    {
-      name: "Node Js",
-      url: "/skill/nodejs.png"
-    },
-    {
-      name: "HTML",
-      url: "/skill/html.png"
-    },
-    {
-      name: "CSS",
-      url: "/skill/css.png"
-    },
-    {
-      name: "SASS",
-      url: "/skill/sass.png"
-    },
-    {
-      name: "Stylus",
-      url: "/skill/stylus.png"
-    },
-    {
-      name: "Jquery",
-      url: "/skill/jquery.png"
-    },
-    {
-      name: "Git",
-      url: "/skill/git.png"
-    },
-    {
-      name: "Faktory",
-      url: "/skill/faktory.png"
-    },
-    {
-      name: "Nats",
-      url: "/skill/nats.png"
-    },
+  "Databases": [
+    { name: "PostgreSQL", url: "/skill/postgreSQL.png" },
+    { name: "SQL Server", url: "" },
+    { name: "ScyllaDB", url: "/skill/scylla.png" },
+    { name: "MySQL", url: "/skill/mySQL.png" },
+    { name: "Redis", url: "/skill/redis.png" },
+    { name: "MongoDB", url: "/skill/mongoDB.png" },
+  ],
+  "Frontend & Mobile": [
+    { name: "Next.js", url: "" },
+    { name: "Vue.js", url: "/skill/vue.png" },
+    { name: "Flutter", url: "/skill/flutter.png" },
+    { name: "HTML", url: "/skill/html.png" },
+    { name: "CSS", url: "/skill/css.png" },
+    { name: "SASS", url: "/skill/sass.png" },
+    { name: "Stylus", url: "/skill/stylus.png" },
   ]
-});
+};

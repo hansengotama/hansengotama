@@ -71,7 +71,7 @@ const openNewTab = (url: string) => {
   box-sizing: border-box;
 
   .container {
-    max-width: 720px;
+    max-width: 1000px;
     width: 100%;
     display: flex;
     flex-direction: column;

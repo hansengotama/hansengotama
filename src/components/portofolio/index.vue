@@ -77,27 +77,23 @@ const limitedProjects = computed(() => {
 
 #portofolio {
   background: $darkNavy;
-  padding: 100px 0;
+  padding: 20px 0 100px;
   color: white;
 
   .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 24px;
   }
 
   .header {
     margin-bottom: 50px;
-    .label {
-      color: $orange;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 13px;
-    }
+    .label { color: $orange; font-family: monospace; font-size: 13px; letter-spacing: 2px; }
+
     .section-title {
       font-family: "Futura", sans-serif;
-      font-size: clamp(24px, 5vw, 36px);
-      margin-top: 8px;
+      font-size: 26px;
+      margin-top: 5px;
       text-transform: uppercase;
     }
   }

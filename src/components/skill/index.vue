@@ -1,165 +1,148 @@
 <template>
-    <div id="skill">
-        <div class="container">
-            <h1 class="title">
-                Skills
-            </h1>
-            <div class="skill-types">
-                <div class="type"
-                     @click="changeType('language')"
-                     :class="type == 'language' ? 'active' : ''">
-                    Language
-                </div>
-                <div class="type"
-                     @click="changeType('framework')"
-                     :class="type == 'framework' ? 'active' : ''">
-                    Framework
-                </div>
-                <div class="type"
-                     @click="changeType('database')"
-                     :class="type == 'database' ? 'active' : ''">
-                    Database
-                </div>
-                <div class="type"
-                     @click="changeType('others')"
-                     :class="type == 'others' ? 'active' : ''">
-                    Others
-                </div>
-            </div>
+  <div id="skill">
+    <div class="container">
+      <header class="section-header">
+        <span class="label">- Technical Stack</span>
+        <h2 class="title">Expertise & Tools</h2>
+      </header>
 
-            <div class="skill-type-container">
-                <div v-for="(skill, index) in skills[type]" :key="index" class="skills">
-                    <img :src="skill.url" :alt="skill.name">
-                    <div class="skill-name">
-                        {{ skill.name }}
-                    </div>
-                </div>
+      <div class="categories-container">
+        <div v-for="(items, category) in skills" :key="category" class="skill-group">
+          <h3 class="category-name">{{ category }}</h3>
+
+          <div class="pill-cloud">
+            <div
+                v-for="skill in items"
+                :key="skill.name"
+                class="tech-pill"
+                :class="{ 'no-icon': !skill.url || skill.url === '' }"
+            >
+              <div v-if="skill.url && skill.url !== ''" class="icon-box">
+                <img :src="skill.url" :alt="skill.name">
+              </div>
+              <span class="skill-text">{{ skill.name }}</span>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </template>
 
-<script lang="ts">
-import {defineComponent, ref} from "vue";
+<script setup lang="ts">
+import { ref } from "vue";
 import skillStaticData from "@/static/skill-data";
 
-export default defineComponent({
-    data() {
-        return {
-            skills: skillStaticData,
-            type: "language"
-        };
-    },
-    methods: {
-        changeType(type: string) {
-            this.type = type
-        }
-    }
-});
+const skills = ref(skillStaticData);
 </script>
 
 <style lang="scss" scoped>
 @import "@/scss/index.scss";
 
 #skill {
-    @include text-cannot-edit;
+  background: $darkNavy;
+  padding: 60px 0;
+  color: white;
+  @include text-cannot-edit;
 
-    background: $darkNavy;
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
 
-    .container {
-        padding: 40px 80px;
+  .section-header {
+    margin-bottom: 40px;
+    .label { color: $orange; font-family: monospace; font-size: 13px; letter-spacing: 2px; }
+    .title { font-family: "Futura", sans-serif; font-size: 26px; text-transform: uppercase; margin-top: 5px; }
+  }
 
-        .title {
-            text-align: left;
-            font-family: "Futura", sans-serif;
-            color: $white;
-            margin: 0 10px 20px;
-            font-size: 18px;
-            font-weight: 400;
-        }
+  .categories-container {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
 
-        .skill-types {
-            overflow-x: scroll;
-            white-space:nowrap;
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-            font-family: "Futura", serif;
-            font-size: 22px;
-            display: flex;
-            color: $navy;
+  .skill-group {
+    .category-name {
+      font-family: "Futura", sans-serif;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
 
-            @media (max-width: 500px) {
-                font-size: 18px;
-            }
+      &::after {
+        content: "";
+        height: 1px;
+        flex: 1;
+        background: rgba(255, 255, 255, 0.05);
+        margin-left: 15px;
+      }
+    }
+  }
 
-            .type {
-                margin: 0 10px;
-                cursor: pointer;
-            }
+  .pill-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 
-            .type.active {
-                color: white;
-            }
-        }
+  .tech-pill {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 6px 14px 6px 8px; // Asymmetric padding for icon look
+    border-radius: 6px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
 
-        .skill-types::-webkit-scrollbar {
-            display: none;
-        }
-
-        .skill-type-container {
-            margin: 30px 10px 0;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            grid-gap: 1em;
-
-            .skills {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                background: $navy;
-
-                img {
-                    margin: 20px 0 10px;
-                    width: 40px;
-                }
-
-                .skill-name {
-                    font-family: "Futura", serif;
-                    color: $white;
-                    margin-bottom: 20px;
-                }
-            }
-        }
-
-        @media (max-width: 775px) {
-            .skill-type-container {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        @media (max-width: 620px) {
-            .skill-type-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (max-width: 450px) {
-            .skill-type-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+    &.no-icon {
+      padding: 6px 14px; // Symmetrical padding when no icon
     }
 
-    @media (max-width: 1200px) {
-        .container {
-            padding: 40px 40px;
-        }
+    .icon-box {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        filter: grayscale(100%) brightness(1.2);
+        opacity: 0.7;
+        transition: all 0.3s ease;
+      }
     }
 
-    @media (max-width: 500px) {
-        .container {
-            padding: 40px 20px;
-        }
+    .skill-text {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.7);
+      transition: all 0.3s ease;
     }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba($orange, 0.4);
+      transform: translateY(-2px);
+
+      .icon-box img {
+        filter: grayscale(0%) brightness(1);
+        opacity: 1;
+      }
+
+      .skill-text {
+        color: white;
+      }
+    }
+  }
 }
 </style>
