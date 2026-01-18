@@ -1,109 +1,111 @@
 <template>
-  <main id="cv-page">
-    <div class="cv-actions">
-      <button @click="downloadPDF">
-        Download PDF
-      </button>
-    </div>
-
-    <!-- Header -->
-    <header class="cv-header">
-      <h1 class="name">Hansen</h1>
-
-      <div class="contact">
-        <span>Jakarta, Indonesia</span>
-        <span>•</span>
-        <span>+62 811-1814-032</span>
-        <span>•</span>
-        <span>hansenwu98@gmail.com</span>
-        <span>•</span>
-        <a href="https://linkedin.com/in/hansengotama" target="_blank">
-          linkedin.com/in/hansengotama
-        </a>
+  <main id="cv-wrapper">
+    <div id="cv-page">
+      <div class="cv-actions">
+        <button class="btn-download" @click="downloadPDF">
+          <span class="icon">↓</span> Download PDF
+        </button>
       </div>
-    </header>
 
-    <!-- Summary -->
-    <section class="cv-section">
-      <h2 class="section-title">Summary</h2>
-      <p class="summary">
-        Senior backend-focused engineer with 7+ years of experience building and
-        maintaining systems across backend, mobile, and web platforms.
-        Experienced in leading teams, defining technical direction, and removing
-        blockers to ensure high-quality delivery.
-        <br>
-        <br>
-        Strong believer in scalable system design, clean architecture, and effective engineering processes to
-        drive business outcomes. Passionate about solving complex problems,
-        understanding the why behind systems, and building solutions that create
-        meaningful impact.
-      </p>
-    </section>
+      <!-- Header -->
+      <header class="cv-header">
+        <h1 class="name">Hansen</h1>
 
-    <!-- Skills -->
-    <section class="cv-section">
-      <h2 class="section-title">Skills & Technologies</h2>
-      <div class="skills-summary">
-        <p>
-          <strong>Languages & Frameworks:</strong>
-          Go, PHP (Laravel, Phalcon), Dart (Flutter), Node.js, Next.js, Vue.js.
+        <div class="contact">
+          <span>Jakarta, Indonesia</span>
+          <span>•</span>
+          <span>+62 811-1814-032</span>
+          <span>•</span>
+          <span>hansenwu98@gmail.com</span>
+          <span>•</span>
+          <a href="https://linkedin.com/in/hansengotama" target="_blank">
+            linkedin.com/in/hansengotama
+          </a>
+        </div>
+      </header>
+
+      <!-- Summary -->
+      <section class="cv-section">
+        <h2 class="section-title">Summary</h2>
+        <p class="summary">
+          Senior backend-focused engineer with 7+ years of experience building and
+          maintaining systems across backend, mobile, and web platforms.
+          Experienced in leading teams, defining technical direction, and removing
+          blockers to ensure high-quality delivery.
+          <br>
+          <br>
+          Strong believer in scalable system design, clean architecture, and effective engineering processes to
+          drive business outcomes. Passionate about solving complex problems,
+          understanding the why behind systems, and building solutions that create
+          meaningful impact.
         </p>
-        <p>
-          <strong>Infrastructure & Databases:</strong>
-          PostgreSQL, SQL Server, Redis, Docker, Linux, GitHub Actions.
-        </p>
-      </div>
-    </section>
+      </section>
 
-    <!-- Experience -->
-    <section class="cv-section">
-      <h2 class="section-title">Experience</h2>
+      <!-- Skills -->
+      <section class="cv-section">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <div class="skills-summary">
+          <p>
+            <strong>Languages & Frameworks:</strong>
+            Go, PHP (Laravel, Phalcon), Dart (Flutter), Node.js, Next.js, Vue.js.
+          </p>
+          <p>
+            <strong>Infrastructure & Databases:</strong>
+            PostgreSQL, SQL Server, Redis, Docker, Linux, GitHub Actions.
+          </p>
+        </div>
+      </section>
 
-      <div
-          v-for="(company, cIndex) in experienceData.works"
-          :key="cIndex"
-          class="company"
-      >
-        <h3 class="company-name">{{ company.name }}</h3>
+      <!-- Experience -->
+      <section class="cv-section">
+        <h2 class="section-title">Experience</h2>
 
         <div
-            v-for="(role, rIndex) in company.roles"
-            :key="rIndex"
-            class="role"
+            v-for="(company, cIndex) in experienceData.works"
+            :key="cIndex"
+            class="company"
         >
-          <div class="role-header">
-            <span class="role-title">{{ role.text }}</span>
-            <span class="role-time">{{ role.time }}</span>
+          <h3 class="company-name">{{ company.name }}</h3>
+
+          <div
+              v-for="(role, rIndex) in company.roles"
+              :key="rIndex"
+              class="role"
+          >
+            <div class="role-header">
+              <span class="role-title">{{ role.text }}</span>
+              <span class="role-time">{{ role.time }}</span>
+            </div>
+
+            <ul class="role-points">
+              <li
+                  v-for="(point, pIndex) in role.description"
+                  :key="pIndex"
+              >
+                {{ point }}
+              </li>
+            </ul>
           </div>
-
-          <ul class="role-points">
-            <li
-                v-for="(point, pIndex) in role.description"
-                :key="pIndex"
-            >
-              {{ point }}
-            </li>
-          </ul>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Education -->
-    <section class="cv-section">
-      <h2 class="section-title">Education</h2>
+      <!-- Education -->
+      <section class="cv-section">
+        <h2 class="section-title">Education</h2>
 
-      <div class="education">
-        <div class="education-header">
+        <div class="education">
+          <div class="education-header">
           <span class="education-school">
             Universitas Bina Nusantara (Binus)
           </span>
-          <span class="education-year">2019</span>
+            <span class="education-year">2019</span>
+          </div>
+          <div class="education-degree">
+            Bachelor of Science (BSc) in Computer Science
+          </div>
         </div>
-        <div class="education-degree">
-          Bachelor of Science (BSc) in Computer Science
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 </template>
 
@@ -134,57 +136,90 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+#cv-wrapper {
+  background: #2d2e37; /* Match your navbar/background color */
+  min-height: 100vh;
+  padding: 40px 20px; /* Space around the "paper" */
+}
+
 #cv-page {
- max-width: 900px;
- margin: 0 auto;
- padding: 72px 32px 100px;
- background: #ffffff;
- color: #111111;
- font-family: "Inter", "Roboto", Arial, sans-serif;
- text-align: left;
+  max-width: 850px; /* Slightly narrower for better readability */
+  margin: 0 auto;
+  padding: 60px 50px; /* Internal document padding */
+  background: #ffffff;
+  color: #111111;
+  font-family: "Inter", "Roboto", Arial, sans-serif;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Soft shadow to lift from background */
+  border-radius: 4px;
+  text-align: left;
 }
 
 .cv-actions {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
 
-  button {
-    font-size: 14px;
-    padding: 8px 14px;
-    border: 1px solid #ccc;
-    background: #ffffff;
-    color: #111;
+  .btn-download {
+    background: transparent;
+    border: 1px solid #e1e1e1;
+    color: #555;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.2s ease;
     cursor: pointer;
-    border-radius: 4px;
 
     &:hover {
-      background: #f5f5f5;
+      background: #f9f9f9;
+      border-color: #111;
+      color: #111;
     }
+  }
+}
+
+@media (max-width: 850px) {
+  #cv-wrapper {
+    padding: 0; /* Remove top/bottom gap on mobile */
+    background: #ffffff; /* Make the whole page white to match content */
+  }
+
+  #cv-page {
+    padding: 40px 24px; /* Slightly tighter padding for mobile */
+    box-shadow: none; /* Remove shadow */
+    border-radius: 0; /* Square edges for full-width look */
+  }
+
+  .cv-actions {
+    padding: 20px 24px 0; /* Add padding to button so it doesn't touch screen edge */
+    background: #ffffff;
+    margin-bottom: 0;
   }
 }
 
 /* Hide button in PDF */
 @media print {
-  #menu, #footer, .cv-actions {
-    display: none !important;
+  body, #cv-wrapper {
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   #cv-page {
-    display: block;
-    /* Reset padding so it doesn't double up with page margins */
+    box-shadow: none !important;
     padding: 0 !important;
     margin: 0 !important;
-    width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
-  .skills-summary p strong {
-    width: 150px; /* Slightly tighter for print */
+  .cv-actions, #menu, nav, #footer {
+    display: none !important;
   }
 
   @page {
     size: A4;
-    margin: 15mm;
+    margin: 15mm; /* Browser default top gap fixed here */
   }
 }
 
