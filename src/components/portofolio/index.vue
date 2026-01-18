@@ -85,7 +85,7 @@ const limitedProjects = computed(() => {
   @include text-cannot-edit;
 
   .container {
-    max-width: 1200px; // Matched to your project page max-width
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 24px;
   }
