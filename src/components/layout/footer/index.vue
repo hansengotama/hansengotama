@@ -10,7 +10,7 @@
         </div>
 
         <div class="build-info">
-          Built with <span class="tech">Vue 3</span> & <span class="tech">TypeScript</span>
+          Built with <span class="tech">Love</span>
         </div>
       </div>
     </div>
