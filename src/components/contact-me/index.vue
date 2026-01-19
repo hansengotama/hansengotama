@@ -181,6 +181,12 @@ const openNewTab = (url: string) => {
         width: 20px;
         display: flex;
         justify-content: center;
+
+        svg {
+          display: block;
+          width: 1em;
+          height: 1em;
+        }
       }
 
       .info {
