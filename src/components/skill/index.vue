@@ -40,6 +40,7 @@ const skills = ref(skillStaticData);
 @import "@/scss/index.scss";
 
 #skill {
+  text-align: left;
   background: $darkNavy;
   padding: 80px 0;
   color: white;

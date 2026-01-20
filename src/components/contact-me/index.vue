@@ -215,15 +215,28 @@ const openNewTab = (url: string) => {
   // Responsive logic
   @media screen and (max-width: 768px) {
     padding: 80px 0;
+
     .contact-grid {
       grid-template-columns: 1fr;
       text-align: left;
-      gap: 60px;
+      gap: 50px; // Slightly reduced gap for mobile flow
     }
-    .identity-side .social-links { justify-content: center; }
-    .details-side .detail-row {
-      justify-content: center;
-      text-align: left;
+
+    .identity-side {
+      .social-links {
+        justify-content: flex-start; // Changed from center to left
+      }
+    }
+
+    .details-side {
+      .details-card {
+        padding: 30px 20px; // Tighter padding for mobile screens
+      }
+
+      .detail-row {
+        justify-content: flex-start; // Changed from center to left
+        text-align: left;
+      }
     }
   }
 }
