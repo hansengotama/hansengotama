@@ -13,10 +13,14 @@ export default {
     { name: "NATS", url: "/skill/nats.png" },
     { name: "Faktory", url: "/skill/faktory.png" },
   ],
-  "Infrastructure & DevOps": [
-    { name: "Docker", url: "" },
-    { name: "GitHub Actions", url: "" },
-    { name: "Git", url: "/skill/git.png" },
+  "Frontend & Mobile": [
+    { name: "Next.js", url: "" },
+    { name: "Vue.js", url: "/skill/vue.png" },
+    { name: "Flutter", url: "/skill/flutter.png" },
+    { name: "HTML", url: "/skill/html.png" },
+    { name: "CSS", url: "/skill/css.png" },
+    { name: "SASS", url: "/skill/sass.png" },
+    { name: "Stylus", url: "/skill/stylus.png" },
   ],
   "Databases": [
     { name: "PostgreSQL", url: "/skill/postgreSQL.png" },
@@ -26,13 +30,9 @@ export default {
     { name: "Redis", url: "/skill/redis.png" },
     { name: "MongoDB", url: "/skill/mongoDB.png" },
   ],
-  "Frontend & Mobile": [
-    { name: "Next.js", url: "" },
-    { name: "Vue.js", url: "/skill/vue.png" },
-    { name: "Flutter", url: "/skill/flutter.png" },
-    { name: "HTML", url: "/skill/html.png" },
-    { name: "CSS", url: "/skill/css.png" },
-    { name: "SASS", url: "/skill/sass.png" },
-    { name: "Stylus", url: "/skill/stylus.png" },
+  "Infrastructure & DevOps": [
+    { name: "Docker", url: "" },
+    { name: "GitHub Actions", url: "" },
+    { name: "Git", url: "/skill/git.png" },
   ]
 };

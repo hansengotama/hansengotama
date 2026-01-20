@@ -4,7 +4,7 @@
       <div class="header-section">
         <div class="title-group">
           <h1>Hansen Wu</h1>
-          <p class="role">Senior Backend Engineer & Tech Lead</p>
+          <p class="role">Software Engineer</p>
         </div>
 
         <div class="actions-group">

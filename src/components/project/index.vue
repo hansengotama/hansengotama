@@ -57,6 +57,7 @@ const allProjects = computed(() => projectStaticData.value || []);
   background: $darkNavy;
   padding: 20px 0 100px;
   color: white;
+  text-align: left;
 
   .container {
     max-width: 1000px;

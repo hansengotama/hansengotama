@@ -21,6 +21,10 @@
           <a href="https://linkedin.com/in/hansengotama" target="_blank">
             linkedin.com/in/hansengotama
           </a>
+          <span>•</span>
+          <a href="https://hansengotama.vercel.app/" target="_blank">
+            hansengotama.vercel.app
+          </a>
         </div>
       </header>
 

@@ -6,7 +6,7 @@
           <span class="symbol">©</span>
           <span class="year">{{ currentYear }}</span>
           <span class="divider">|</span>
-          <span class="name">Hansen Wu</span>
+          <span class="name">HANSEN WU</span>
         </div>
 
         <div class="build-info">

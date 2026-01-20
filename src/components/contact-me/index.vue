@@ -217,7 +217,7 @@ const openNewTab = (url: string) => {
     padding: 80px 0;
     .contact-grid {
       grid-template-columns: 1fr;
-      text-align: center;
+      text-align: left;
       gap: 60px;
     }
     .identity-side .social-links { justify-content: center; }
