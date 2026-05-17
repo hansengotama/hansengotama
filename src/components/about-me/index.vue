@@ -1,46 +1,48 @@
 <template>
   <div id="about-me">
     <div class="container">
-      <div class="header-section">
-        <div class="title-group">
-          <h1>Hansen Wu</h1>
-          <p class="role">Software Engineer</p>
-        </div>
+      <div class="hero-grid">
 
-        <div class="actions-group">
-          <div class="social-links">
-            <div
+        <!-- Left: Text Content -->
+        <div class="text-col">
+          <p class="greeting">Hello, I'm</p>
+          <h1>Hansen Wu</h1>
+          <p class="role">Senior Software Engineer</p>
+
+          <div class="divider"></div>
+
+          <div class="bio">
+            <p>
+              Senior backend-focused engineer with 7+ years of experience building and
+              maintaining systems across backend, mobile, and web platforms.
+              Experienced in leading teams, defining technical direction, and
+              removing blockers to ensure high-quality delivery.
+            </p>
+            <p>
+              Strong believer in scalable system design, clean architecture, and
+              effective engineering processes to drive business outcomes.
+            </p>
+          </div>
+
+          <div class="actions">
+            <div class="social-links">
+              <div
                 v-for="(sm, index) in socialMediaList"
                 :key="index"
                 class="icon-item"
                 @click="openNewTab(sm.url)"
-            >
-              <fa :icon="sm.icon" type="fab"></fa>
+                :aria-label="sm.icon"
+              >
+                <fa :icon="sm.icon" type="fab"></fa>
+              </div>
             </div>
+            <button class="cv-button" @click="openNewTab('/cv')">View CV</button>
           </div>
-
-          <button class="cv-button" @click="openNewTab('/cv')">
-            View CV
-          </button>
         </div>
+
+
       </div>
 
-      <div class="divider"></div>
-
-      <div class="bio-section">
-        <p>
-          Senior backend-focused engineer with 7+ years of experience building and
-          maintaining systems across backend, mobile, and web platforms.
-          Experienced in leading teams, defining technical direction, and
-          removing blockers to ensure high-quality delivery.
-        </p>
-        <p>
-          Strong believer in scalable system design, clean architecture, and
-          effective engineering processes to drive business outcomes. Passionate
-          about solving complex problems, understanding the why behind systems,
-          and building solutions that create meaningful impact.
-        </p>
-      </div>
     </div>
   </div>
 </template>
@@ -49,92 +51,114 @@
 import { computed } from "vue";
 import socialMediaData from "@/static/social-media-data";
 
-const socialMediaList = computed(() => {
-  return socialMediaData.value || [];
-});
+const socialMediaList = computed(() => socialMediaData.value || []);
 
 const openNewTab = (url: string) => {
-  if (url) {
-    window.open(url, "_blank", "noopener,noreferrer");
-  }
+  if (url) window.open(url, "_blank", "noopener,noreferrer");
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/scss/index.scss";
 
+
 #about-me {
-  text-align: left;
-  width: 100% !important;
   background: $navy;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 80px 20px;
+  color: $white;
+  padding: 120px 20px 70px;
   box-sizing: border-box;
+  @include text-cannot-edit;
 
   .container {
     max-width: 1000px;
+    margin: 0 auto;
     width: 100%;
-    display: flex;
-    flex-direction: column;
   }
 
-  .header-section {
+  /* ── Hero Grid ───────────────────────────────── */
+  .hero-grid {
+    margin-bottom: 60px;
+  }
+
+  /* ── Text Column ─────────────────────────────── */
+  .text-col {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 5px;
-    width: 100%;
+    flex-direction: column;
+
+    .greeting {
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      color: rgba($white, 0.45);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
 
     h1 {
       font-family: "Futura", sans-serif;
-      font-size: 32px;
-      margin: 0;
+      font-size: clamp(28px, 5vw, 44px);
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       line-height: 1.1;
+      margin: 0;
     }
 
     .role {
       font-family: "Roboto", sans-serif;
-      font-size: 14px;
+      font-size: 13px;
       color: $orange;
-      margin: 8px 0 0 0;
+      margin-top: 10px;
       text-transform: uppercase;
-      letter-spacing: 1.2px;
+      letter-spacing: 2px;
       font-weight: 500;
     }
 
-    .actions-group {
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: $orange;
+      margin: 28px 0;
+      border-radius: 2px;
+    }
+
+    .bio {
+      p {
+        font-family: "Roboto", sans-serif;
+        font-size: 15px;
+        line-height: 1.85;
+        color: rgba($white, 0.62);
+        font-weight: 300;
+        margin-bottom: 16px;
+        max-width: 700px;
+
+        &:last-child { margin-bottom: 0; }
+      }
+    }
+
+    .actions {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 28px;
+      margin-top: 36px;
 
       .social-links {
         display: flex;
-        gap: 18px;
+        gap: 20px;
         align-items: center;
 
         .icon-item {
           display: inline-flex;
-          font-size: 22px;
+          font-size: 21px;
           cursor: pointer;
-          transition: all 0.3s ease;
-          color: rgba(255, 255, 255, 0.7);
+          color: rgba($white, 0.5);
+          transition: color 0.25s ease, transform 0.25s ease;
 
           &:hover {
             color: $orange;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
           }
 
-          svg {
-            display: block;
-            width: 1em;
-            height: 1em;
-          }
+          svg { display: block; width: 1em; height: 1em; }
         }
       }
 
@@ -142,7 +166,7 @@ const openNewTab = (url: string) => {
         background: transparent;
         border: 1px solid rgba($orange, 0.5);
         color: $orange;
-        padding: 8px 16px;
+        padding: 9px 20px;
         font-family: "Roboto", sans-serif;
         font-size: 11px;
         font-weight: 700;
@@ -150,53 +174,25 @@ const openNewTab = (url: string) => {
         letter-spacing: 1px;
         border-radius: 4px;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: background 0.25s ease, border-color 0.25s ease;
 
         &:hover {
           background: rgba($orange, 0.1);
           border-color: $orange;
-          transform: translateY(-2px);
+        }
+
+        &:focus-visible {
+          outline: 2px solid $orange;
+          outline-offset: 2px;
         }
       }
     }
   }
 
-  .divider {
-    width: 100%;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.1);
-    margin: 25px 0 35px 0;
-  }
 
-  .bio-section {
-    p {
-      font-family: "Roboto", sans-serif;
-      font-size: 16px;
-      line-height: 1.8;
-      margin-bottom: 20px;
-      color: rgba(255, 255, 255, 0.7);
-      font-weight: 300;
-      max-width: 900px;
-    }
-  }
 
-  /* --- RESPONSIVE ADJUSTMENTS --- */
-  @media screen and (max-width: 768px) {
-    #about-me {
-      padding: 60px 24px;
-    }
-
-    .header-section {
-      flex-direction: column !important;
-      align-items: flex-start !important;
-      gap: 25px;
-
-      .actions-group {
-        width: 100%;
-        justify-content: space-between;
-        flex-direction: row-reverse;
-      }
-    }
+  @media (max-width: 768px) {
+    padding: 100px 20px 60px;
   }
 }
 </style>

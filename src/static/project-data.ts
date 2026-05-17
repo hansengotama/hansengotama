@@ -3,7 +3,7 @@ import { ref } from "vue";
 export default ref([
     {
         name: "My Portfolio",
-        src: "/portofolio/hansenwu.jpg",
+        src: "/portofolio/hansenwu.webp",
         showInHomePage: true,
         role: "Software Engineer",
         description: "A simple site built to share my profile and connect with others for potential collaborations.",
@@ -11,7 +11,7 @@ export default ref([
     },
     {
         name: "Pattidana CDM System",
-        src: "/portofolio/pattidana.jpg",
+        src: "/portofolio/pattidana.webp",
         showInHomePage: true,
         role: "Software Engineer",
         description: "Built and maintained this system since 2020. It handles yearly event registrations for ~2,000 entries, including a user portal and a manual verification flow for donations.",
@@ -20,7 +20,7 @@ export default ref([
     },
     {
         name: "Schoolah",
-        src: "/portofolio/schoolah.jpg",
+        src: "/portofolio/schoolah.webp",
         showInHomePage: true,
         role: "Software Engineer",
         description: "A university final project covering student attendance, tuition reminders, online exams, and a teacher-student chat forum.",
@@ -28,7 +28,7 @@ export default ref([
     },
     {
         name: "KMBD Organization",
-        src: "/portofolio/kmbd.jpg",
+        src: "/portofolio/kmbd.webp",
         showInHomePage: true,
         role: "Software Engineer",
         description: "My debut project. Developed the organization's website and CMS. Integrated an RFID-based system for tracking member attendance at events.",
@@ -37,15 +37,16 @@ export default ref([
     },
     {
         name: "Hotel Bintang Mulia",
-        src: "/portofolio/bintang-mulia.jpg",
+        src: "/portofolio/bintang-mulia.webp",
         showInHomePage: true,
         role: "Software Engineer",
         description: "Created a landing page to provide information and a digital presence for the hotel.",
         tags: ["Laravel", "Vue.js"],
+        links: [{ label: "Visit Site", url: "https://hotelbintangmulia.vercel.app/" }]
     },
     {
         name: "Event Tracker",
-        src: "/portofolio/event-tracker.jpg",
+        src: "/portofolio/event-tracker.webp",
         role: "Learning",
         description: "A mobile app project created to learn Flutter and SQLite for offline data tracking.",
         tags: ["Flutter", "SQLite", "Dart"],
@@ -53,7 +54,7 @@ export default ref([
     },
     {
         name: "Landing Page",
-        src: "/portofolio/landing-page.jpg",
+        src: "/portofolio/landing-page.webp",
         role: "Learning",
         description: "An exploratory project built to practice modern front-end styling and component structure.",
         tags: ["Vue.js", "Stylus"],

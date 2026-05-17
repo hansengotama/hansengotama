@@ -2,6 +2,7 @@
   <main id="cv-wrapper">
     <div id="cv-page">
       <div class="cv-actions">
+        <button class="btn-back" @click="goHome">← Back</button>
         <button class="btn-download" @click="downloadPDF">
           <span class="icon">↓</span> Download PDF
         </button>
@@ -115,14 +116,21 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useRouter } from "vue-router";
 import experienceData from "@/static/experience-data";
 import skillData from "@/static/skill-data";
 
 export default defineComponent({
     name: "CVPage",
     setup() {
+      const router = useRouter();
+
       const downloadPDF = () => {
         window.print();
+      };
+
+      const goHome = () => {
+        router.push("/");
       };
 
       const formatSkills = (list: any[]) => {
@@ -133,6 +141,7 @@ export default defineComponent({
         experienceData,
         skillData,
         downloadPDF,
+        goHome,
         formatSkills
       };
     }
@@ -141,9 +150,9 @@ export default defineComponent({
 
 <style lang="scss">
 #cv-wrapper {
-  background: #2d2e37; /* Match your navbar/background color */
+  background: #2d2e37;
   min-height: 100vh;
-  padding: 40px 20px; /* Space around the "paper" */
+  padding: 40px 20px;
 }
 
 #cv-page {
@@ -160,8 +169,27 @@ export default defineComponent({
 
 .cv-actions {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 30px;
+
+  .btn-back {
+    background: transparent;
+    border: 1px solid #e1e1e1;
+    color: #555;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: #f9f9f9;
+      border-color: #111;
+      color: #111;
+    }
+  }
 
   .btn-download {
     background: transparent;
@@ -184,18 +212,18 @@ export default defineComponent({
 
 @media (max-width: 850px) {
   #cv-wrapper {
-    padding: 0; /* Remove top/bottom gap on mobile */
-    background: #ffffff; /* Make the whole page white to match content */
+    padding: 0;
+    background: #ffffff;
   }
 
   #cv-page {
-    padding: 40px 24px; /* Slightly tighter padding for mobile */
-    box-shadow: none; /* Remove shadow */
-    border-radius: 0; /* Square edges for full-width look */
+    padding: 32px 24px;
+    box-shadow: none;
+    border-radius: 0;
   }
 
   .cv-actions {
-    padding: 20px 24px 0; /* Add padding to button so it doesn't touch screen edge */
+    padding: 16px 24px 0;
     background: #ffffff;
     margin-bottom: 0;
   }

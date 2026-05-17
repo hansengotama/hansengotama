@@ -18,7 +18,7 @@
                 :class="{ 'no-icon': !skill.url || skill.url === '' }"
             >
               <div v-if="skill.url && skill.url !== ''" class="icon-box">
-                <img :src="skill.url" :alt="skill.name">
+                <img :src="skill.url" :alt="skill.name" loading="lazy" decoding="async">
               </div>
               <span class="skill-text">{{ skill.name }}</span>
             </div>
