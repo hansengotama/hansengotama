@@ -14,7 +14,7 @@
             class="project-card"
         >
           <div class="image-section">
-            <img :src="data.src" :alt="data.name" loading="lazy" />
+            <img :src="data.src" :alt="data.name" width="724" height="320" loading="lazy" />
             <div class="role-badge" :class="data.role.toLowerCase().replace(/\s+/g, '-')">
               {{ data.role }}
             </div>
