@@ -1,48 +1,39 @@
 <template>
   <div id="about-me">
     <div class="container">
-      <div class="hero-grid">
+      <p class="greeting">Hello, I'm</p>
+      <h1>Hansen Wu</h1>
+      <p class="role">Senior Software Engineer</p>
 
-        <!-- Left: Text Content -->
-        <div class="text-col">
-          <p class="greeting">Hello, I'm</p>
-          <h1>Hansen Wu</h1>
-          <p class="role">Senior Software Engineer</p>
+      <div class="divider"></div>
 
-          <div class="divider"></div>
-
-          <div class="bio">
-            <p>
-              Senior backend-focused engineer with 7+ years of experience building and
-              maintaining systems across backend, mobile, and web platforms.
-              Experienced in leading teams, defining technical direction, and
-              removing blockers to ensure high-quality delivery.
-            </p>
-            <p>
-              Strong believer in scalable system design, clean architecture, and
-              effective engineering processes to drive business outcomes.
-            </p>
-          </div>
-
-          <div class="actions">
-            <div class="social-links">
-              <button
-                v-for="(sm, index) in socialMediaList"
-                :key="index"
-                class="icon-item"
-                @click="openNewTab(sm.url)"
-                :aria-label="sm.icon"
-              >
-                <fa :icon="sm.icon" type="fab"></fa>
-              </button>
-            </div>
-            <button class="cv-button" @click="openNewTab('/cv')">View CV</button>
-          </div>
-        </div>
-
-
+      <div class="bio">
+        <p>
+          Senior backend-focused engineer with 7+ years of experience building and
+          maintaining systems across backend, mobile, and web platforms.
+          Experienced in leading teams, defining technical direction, and
+          removing blockers to ensure high-quality delivery.
+        </p>
+        <p>
+          Strong believer in scalable system design, clean architecture, and
+          effective engineering processes to drive business outcomes.
+        </p>
       </div>
 
+      <div class="actions">
+        <div class="social-links">
+          <button
+            v-for="(sm, index) in socialMediaList"
+            :key="index"
+            class="icon-item"
+            @click="openNewTab(sm.url)"
+            :aria-label="sm.name"
+          >
+            <fa :icon="sm.icon" type="fab"></fa>
+          </button>
+        </div>
+        <button class="cv-button" @click="openNewTab('/cv')">View CV</button>
+      </div>
     </div>
   </div>
 </template>
@@ -75,17 +66,7 @@ const openNewTab = (url: string) => {
     width: 100%;
   }
 
-  /* ── Hero Grid ───────────────────────────────── */
-  .hero-grid {
-    margin-bottom: 60px;
-  }
-
-  /* ── Text Column ─────────────────────────────── */
-  .text-col {
-    display: flex;
-    flex-direction: column;
-
-    .greeting {
+  .greeting {
       font-family: "Roboto", sans-serif;
       font-size: 14px;
       color: rgba($white, 0.65);
@@ -196,9 +177,6 @@ const openNewTab = (url: string) => {
         }
       }
     }
-  }
-
-
 
   @media (max-width: 768px) {
     padding: 100px 20px 60px;

@@ -31,7 +31,7 @@
             </div>
 
             <div class="footer-section" v-if="data.links?.length">
-              <a v-for="link in data.links" :key="link.url" :href="link.url" target="_blank" class="project-link">
+              <a v-for="link in data.links" :key="link.url" :href="link.url" target="_blank" class="project-link" :aria-label="`${link.label} – ${data.name}`">
                 {{ link.label }} →
               </a>
             </div>

@@ -17,9 +17,7 @@
                 class="tech-pill"
                 :class="{ 'no-icon': !skill.url || skill.url === '' }"
             >
-              <div v-if="skill.url && skill.url !== ''" class="icon-box">
-                <img :src="skill.url" :alt="skill.name" loading="lazy" decoding="async">
-              </div>
+              <img v-if="skill.url && skill.url !== ''" :src="skill.url" :alt="skill.name" width="20" height="20" loading="lazy" decoding="async" class="skill-icon">
               <span class="skill-text">{{ skill.name }}</span>
             </div>
           </div>
@@ -105,22 +103,14 @@ const skills = ref(skillStaticData);
       padding: 6px 14px; // Symmetrical padding when no icon
     }
 
-    .icon-box {
+    .skill-icon {
       width: 20px;
       height: 20px;
       margin-right: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-        filter: grayscale(100%) brightness(1.2);
-        opacity: 0.7;
-        transition: all 0.3s ease;
-      }
+      object-fit: contain;
+      filter: grayscale(100%) brightness(1.2);
+      opacity: 0.7;
+      transition: all 0.3s ease;
     }
 
     .skill-text {
@@ -135,7 +125,7 @@ const skills = ref(skillStaticData);
       border-color: rgba($orange, 0.4);
       transform: translateY(-2px);
 
-      .icon-box img {
+      .skill-icon {
         filter: grayscale(0%) brightness(1);
         opacity: 1;
       }

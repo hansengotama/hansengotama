@@ -23,7 +23,6 @@
               :key="rIdx"
               class="role-row"
             >
-              <div class="role-dot"></div>
               <div class="role-info">
                 <span class="role-title">{{ role.text }}</span>
                 <span class="role-time">{{ role.time }}</span>
@@ -146,7 +145,8 @@ const works = computed(() => experienceData.value.works);
     }
   }
 
-  .role-dot {
+  .role-row::before {
+    content: '';
     width: 7px;
     height: 7px;
     border-radius: 50%;
@@ -156,10 +156,10 @@ const works = computed(() => experienceData.value.works);
     margin-left: -27px;
     margin-right: 20px;
     transition: background 0.2s ease;
+  }
 
-    .role-row:hover & {
-      background: $orange;
-    }
+  .role-row:hover::before {
+    background: $orange;
   }
 
   .role-info {
