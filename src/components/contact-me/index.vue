@@ -12,14 +12,15 @@
           <div class="social-links-block">
             <span class="sub-label">Social Media</span>
             <div class="social-links">
-              <div
+              <button
                   v-for="(sm, index) in socialMediaList"
                   :key="index"
                   class="icon-item"
+                  :aria-label="sm.icon"
                   @click="openNewTab(sm.url)"
               >
                 <fa :icon="sm.icon" type="fab" />
-              </div>
+              </button>
             </div>
           </div>
         </div>
@@ -120,7 +121,7 @@ const openNewTab = (url: string) => {
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: rgba(255, 255, 255, 0.3);
+      color: rgba(255, 255, 255, 0.6);
       margin-bottom: 20px;
     }
 
@@ -134,12 +135,21 @@ const openNewTab = (url: string) => {
         display: inline-flex;
         font-size: 26px;
         cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
         transition: all 0.3s ease;
         color: rgba(255, 255, 255, 0.4);
 
         &:hover {
           color: $orange;
           transform: translateY(-4px);
+        }
+
+        &:focus-visible {
+          outline: 2px solid $orange;
+          outline-offset: 4px;
+          border-radius: 2px;
         }
 
         svg {
@@ -196,7 +206,7 @@ const openNewTab = (url: string) => {
           font-size: 10px;
           text-transform: uppercase;
           letter-spacing: 1px;
-          color: rgba(255, 255, 255, 0.3);
+          color: rgba(255, 255, 255, 0.6);
         }
         .val {
           font-size: 16px;

@@ -68,7 +68,7 @@ const skills = ref(skillStaticData);
     .category-name {
       font-family: "Futura", sans-serif;
       font-size: 14px;
-      color: rgba(255, 255, 255, 0.3);
+      color: rgba(255, 255, 255, 0.6);
       text-transform: uppercase;
       letter-spacing: 1.5px;
       margin-bottom: 15px;

@@ -183,7 +183,7 @@ const works = computed(() => experienceData.value.works);
     .role-time {
       font-family: monospace;
       font-size: 12px;
-      color: rgba($white, 0.35);
+      color: rgba($white, 0.6);
       white-space: nowrap;
       flex-shrink: 0;
     }

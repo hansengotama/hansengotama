@@ -26,7 +26,7 @@
 
           <div class="actions">
             <div class="social-links">
-              <div
+              <button
                 v-for="(sm, index) in socialMediaList"
                 :key="index"
                 class="icon-item"
@@ -34,7 +34,7 @@
                 :aria-label="sm.icon"
               >
                 <fa :icon="sm.icon" type="fab"></fa>
-              </div>
+              </button>
             </div>
             <button class="cv-button" @click="openNewTab('/cv')">View CV</button>
           </div>
@@ -88,7 +88,7 @@ const openNewTab = (url: string) => {
     .greeting {
       font-family: "Roboto", sans-serif;
       font-size: 14px;
-      color: rgba($white, 0.45);
+      color: rgba($white, 0.65);
       letter-spacing: 2px;
       text-transform: uppercase;
       margin-bottom: 10px;
@@ -151,11 +151,20 @@ const openNewTab = (url: string) => {
           font-size: 21px;
           cursor: pointer;
           color: rgba($white, 0.5);
+          background: none;
+          border: none;
+          padding: 0;
           transition: color 0.25s ease, transform 0.25s ease;
 
           &:hover {
             color: $orange;
             transform: translateY(-3px);
+          }
+
+          &:focus-visible {
+            outline: 2px solid $orange;
+            outline-offset: 4px;
+            border-radius: 2px;
           }
 
           svg { display: block; width: 1em; height: 1em; }

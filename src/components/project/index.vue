@@ -75,7 +75,7 @@ const allProjects = computed(() => projectStaticData.value || []);
     }
     .section-title { font-family: "Futura", sans-serif; font-size: 26px; text-transform: uppercase; margin-top: 5px; }
     .subtitle {
-      color: rgba(255, 255, 255, 0.4);
+      color: rgba(255, 255, 255, 0.65);
       font-size: 15px;
       margin-top: 8px;
     }

@@ -1,8 +1,8 @@
 <template>
     <Navbar />
-    <div class="parent-container">
+    <main>
         <router-view/>
-    </div>
+    </main>
     <Footer/>
 </template>
 

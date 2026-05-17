@@ -31,7 +31,7 @@ const currentYear = new Date().getFullYear();
   border-top: 1px solid rgba(255, 255, 255, 0.03);
   font-family: "Futura", sans-serif;
   padding: 30px 0;
-  color: rgba($white, 0.3); // Muted color so it's not distracting
+  color: rgba($white, 0.55);
 
   .container {
     max-width: 1000px;

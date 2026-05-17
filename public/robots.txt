@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hansengotama.vercel.app/sitemap.xml
