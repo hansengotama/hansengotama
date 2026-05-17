@@ -1,7 +1,7 @@
 <template>
   <div id="project">
     <div class="container">
-      <header class="header">
+      <header class="header" v-animate>
         <span class="label">- My Works</span>
         <h2 class="section-title">Projects</h2>
         <p class="subtitle">My technical experiments and legacy works.</p>
@@ -12,6 +12,7 @@
             v-for="(data, index) in allProjects"
             :key="index"
             class="project-card"
+            v-animate="{ delay: index * 80 }"
         >
           <div class="image-section">
             <img :src="data.src" :alt="data.name" width="724" height="320" loading="lazy" />

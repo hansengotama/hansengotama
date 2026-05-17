@@ -1,7 +1,7 @@
 <template>
   <div id="experience">
     <div class="container">
-      <header class="section-header">
+      <header class="section-header" v-animate>
         <span class="label">- Career</span>
         <h2 class="title">Experience</h2>
       </header>
@@ -11,6 +11,7 @@
           v-for="(work, wIdx) in works"
           :key="wIdx"
           class="company-block"
+          v-animate="{ delay: wIdx * 100 }"
         >
           <div class="company-line">
             <span class="company-name">{{ work.name }}</span>

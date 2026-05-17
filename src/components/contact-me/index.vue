@@ -3,7 +3,7 @@
     <div class="container">
       <div class="contact-grid">
 
-        <div class="identity-side">
+        <div class="identity-side" v-animate>
           <header class="section-header">
             <span class="label">- Connection</span>
             <h2 class="title">CONTACT ME</h2>
@@ -25,7 +25,7 @@
           </div>
         </div>
 
-        <div class="details-side">
+        <div class="details-side" v-animate="{ delay: 150 }">
           <div class="details-card">
 
             <a href="tel:+628111814032" class="detail-row">

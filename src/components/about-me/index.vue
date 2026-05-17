@@ -1,13 +1,13 @@
 <template>
   <div id="about-me">
     <div class="container">
-      <p class="greeting">Hello, I'm</p>
-      <h1>Hansen Wu</h1>
-      <p class="role">Senior Software Engineer</p>
+      <p class="greeting" v-animate>Hello, I'm</p>
+      <h1 v-animate="{ delay: 80 }">Hansen Wu</h1>
+      <p class="role" v-animate="{ delay: 160 }">Senior Software Engineer</p>
 
-      <div class="divider"></div>
+      <div class="divider" v-animate="{ delay: 240 }"></div>
 
-      <div class="bio">
+      <div class="bio" v-animate="{ delay: 320 }">
         <p>
           Senior backend-focused engineer with 7+ years of experience building and
           maintaining systems across backend, mobile, and web platforms.
@@ -20,7 +20,7 @@
         </p>
       </div>
 
-      <div class="actions">
+      <div class="actions" v-animate="{ delay: 400 }">
         <div class="social-links">
           <button
             v-for="(sm, index) in socialMediaList"

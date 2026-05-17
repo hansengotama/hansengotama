@@ -1,13 +1,13 @@
 <template>
   <div id="skill">
     <div class="container">
-      <header class="section-header">
+      <header class="section-header" v-animate>
         <span class="label">- Technical Stack</span>
         <h2 class="title">Expertise & Tools</h2>
       </header>
 
       <div class="categories-container">
-        <div v-for="(items, category) in skills" :key="category" class="skill-group">
+        <div v-for="(items, category, idx) in skills" :key="category" class="skill-group" v-animate="{ delay: idx * 100 }">
           <h3 class="category-name">{{ category }}</h3>
 
           <div class="pill-cloud">
