@@ -1,7 +1,7 @@
 <template>
     <div id="loading-page">
         <div class="icon animate__animated animate__tada">
-            <img src="/logo.png" alt="logo" />
+            <img src="/logo.webp" alt="logo" width="120" height="120" />
         </div>
     </div>
 </template>

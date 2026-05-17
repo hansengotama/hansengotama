@@ -1,7 +1,7 @@
 <template>
     <div id="not-found-page">
         <div class="icon">
-            <img src="/logo.png" alt="logo" />
+            <img src="/logo.webp" alt="logo" width="200" height="200" />
         </div>
         <div class="description-silde">
             <div>

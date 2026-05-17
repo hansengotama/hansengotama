@@ -4,6 +4,7 @@
         <Skill />
         <Project />
         <Experience />
+        <Education />
         <ContactMe />
     </div>
 </template>
@@ -14,6 +15,7 @@ import AboutMe from "/src/components/about-me/index.vue";
 import Skill from "/src/components/skill/index.vue";
 import Project from "/src/components/project/index.vue";
 import Experience from "/src/components/experience/index.vue";
+import Education from "/src/components/education/index.vue";
 import ContactMe from "/src/components/contact-me/index.vue";
 
 export default defineComponent({
@@ -23,6 +25,7 @@ export default defineComponent({
         Skill,
         Project,
         Experience,
+        Education,
         ContactMe,
     },
 });
