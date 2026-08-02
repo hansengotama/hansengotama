@@ -10,8 +10,7 @@ export default ref({
                     time: "Jul 2025 – Present",
                     description: [
                         "Led a lean digital engineering team of 3 software engineers and project-based freelancers, providing technical direction and ensuring successful delivery of digital initiatives.",
-                        "Led the redesign of a centralized multi-brand e-commerce platform and product management system, enabling multiple brands to operate from a shared architecture.",
-                        "Designed and implemented near real-time data synchronization using Change Data Capture (CDC) to integrate operational systems with the centralized platform.",
+                        "Led the redesign of a centralized multi-brand e-commerce platform and product management system, enabling multiple brands to operate on a shared, scalable architecture while implementing near real-time data synchronization using Change Data Capture (CDC) to integrate operational systems with the platform.",
                         "Collaborated with the team to establish secure CI/CD pipelines, zero-downtime deployments, and AI-assisted development workflows using GitHub Actions, Claude, and GitHub Copilot.",
                         "Improved software quality by introducing unit testing and isolated functional testing with Bruno as part of the delivery pipeline.",
                         "Enhanced platform reliability and security through observability (Sentry APM, Uptime Kuma), rate limiting, and secure token-based authentication.",
