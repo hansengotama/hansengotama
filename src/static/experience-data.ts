@@ -9,13 +9,13 @@ export default ref({
                     text: "IT Digital Developer Manager",
                     time: "Jul 2025 – Present",
                     description: [
-                        "Led a lean digital team (3 dedicated engineers) and project-based freelancers, owning delivery, technical direction, and quality.",
-                        "Worked with the team to build a secure CI/CD pipeline using GitHub Actions and self-hosted runners.",
-                        "Improved observability and incident response by introducing Sentry APM and Uptime Kuma.",
-                        "Strengthened platform security through rate limiting and secure token-based authentication.",
-                        "Enabled zero-downtime deployments and graceful shutdowns for Golang services.",
-                        "Migrated article images to centralized object storage, simplifying content management.",
-                        "Rebuilt multi-brand e-commerce platforms with the team to support scalable and maintainable commerce features."
+                        "Led a lean digital engineering team of 3 software engineers and project-based freelancers, providing technical direction and ensuring successful delivery of digital initiatives.",
+                        "Led the redesign of a centralized multi-brand e-commerce platform and product management system, enabling multiple brands to operate from a shared architecture.",
+                        "Designed and implemented near real-time data synchronization using Change Data Capture (CDC) to integrate operational systems with the centralized platform.",
+                        "Collaborated with the team to establish secure CI/CD pipelines, zero-downtime deployments, and AI-assisted development workflows using GitHub Actions, Claude, and GitHub Copilot.",
+                        "Improved software quality by introducing unit testing and isolated functional testing with Bruno as part of the delivery pipeline.",
+                        "Enhanced platform reliability and security through observability (Sentry APM, Uptime Kuma), rate limiting, and secure token-based authentication.",
+                        "Migrated digital assets to centralized object storage, improving scalability and simplifying content management."
                     ]
                 },
                 {
